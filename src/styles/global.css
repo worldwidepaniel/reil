@@ -1,0 +1,285 @@
+/* Atelier Pszczelarskie REIL — Tailwind CSS v4 Theme
+   REIL Quiet Harvest design system
+   --------------------------------------------------------
+   In Tailwind v4, the theme is defined entirely in CSS via
+   @theme. No tailwind.config.js required.
+   Place this file as your main CSS entry point (or @import it),
+   then add `@import "tailwindcss"` above it.
+*/
+
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+  font-family: var(--font-serif);
+}
+
+.clip-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@theme {
+  /* ── Fonts ─────────────────────────────────────────── */
+  --font-serif: "PT Serif", Georgia, serif;
+
+  /* ── Colors ─────────────────────────────────────────── */
+
+  /* Primary — honey-orange */
+  --color-primary: oklch(71.9% 0.179 54.4);
+  --color-primary-hover: oklch(64.7% 0.162 54);
+  --color-primary-pressed: oklch(58.7% 0.147 54);
+  --color-primary-soft: oklch(94.7% 0.041 73.2);
+
+  /* Secondary — chestnut */
+  --color-secondary: oklch(25.3% 0.042 59.5);
+  --color-secondary-hover: oklch(32% 0.051 58.5);
+  --color-secondary-soft: oklch(96.9% 0.025 75.3);
+
+  /* Tertiary — warm sand */
+  --color-tertiary: oklch(83% 0.083 77.1);
+  --color-tertiary-soft: oklch(94.6% 0.034 78.7);
+
+  /* Backgrounds */
+  --color-background: oklch(97.4% 0.013 86.8);
+  --color-background-muted: oklch(95.6% 0.02 77.3);
+
+  /* Surfaces */
+  --color-surface: oklch(98.3% 0.007 80.7);
+  --color-surface-raised: oklch(94.1% 0.02 74.7);
+  --color-surface-sunken: oklch(91.8% 0.026 76.8);
+  --color-surface-inverse: oklch(25.3% 0.042 59.5);
+
+  /* On-colors (foreground pairs) */
+  --color-on-primary: oklch(25.3% 0.042 59.5);
+  --color-on-secondary: oklch(98.2% 0.016 79.4);
+  --color-on-tertiary: oklch(25.3% 0.042 59.5);
+  --color-on-surface: oklch(25.3% 0.042 59.5);
+  --color-on-surface-muted: oklch(50% 0.03 63.3);
+  --color-on-surface-subtle: oklch(62.1% 0.022 64.9);
+  --color-on-inverse: oklch(98.2% 0.016 79.4);
+
+  /* Borders */
+  --color-outline: oklch(84% 0.019 75.3);
+  --color-outline-strong: oklch(73% 0.026 67.4);
+  --color-divider: oklch(88% 0.018 76);
+
+  /* Semantic — success */
+  --color-success: oklch(47.9% 0.095 144.7);
+  --color-success-soft: oklch(93% 0.03 145);
+  --color-on-success: oklch(98.2% 0.016 79.4);
+
+  /* Semantic — warning */
+  --color-warning: oklch(65.9% 0.135 71.8);
+  --color-warning-soft: oklch(95% 0.034 77);
+  --color-on-warning: oklch(25.3% 0.042 59.5);
+
+  /* Semantic — error */
+  --color-error: oklch(50.9% 0.13 29);
+  --color-error-soft: oklch(94% 0.03 29);
+  --color-on-error: oklch(98.2% 0.016 79.4);
+
+  /* Semantic — info */
+  --color-info: oklch(50% 0.09 234.7);
+  --color-info-soft: oklch(94% 0.02 234);
+  --color-on-info: oklch(98.2% 0.016 79.4);
+
+  /* Interactive states */
+  --color-focus-ring: oklch(71.9% 0.179 54.4 / 0.34);
+  --color-hover-overlay: oklch(25.3% 0.042 59.5 / 0.045);
+  --color-pressed-overlay: oklch(25.3% 0.042 59.5 / 0.085);
+  --color-selected-bg: oklch(94.7% 0.041 73.2);
+  --color-disabled-bg: oklch(91.8% 0.026 76.8);
+  --color-disabled-fg: oklch(62.1% 0.022 64.9);
+  --color-scrim: oklch(25.3% 0.042 59.5 / 0.42);
+  --color-transparent: oklch(100% 0 0 / 0);
+
+  /* ── Border Radius ───────────────────────────────────── */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* ── Spacing ─────────────────────────────────────────── */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 72px;
+  --spacing-section-lg: 104px;
+
+  --spacing-gutter-mobile: 16px;
+  --spacing-gutter-tablet: 24px;
+  --spacing-gutter-desktop: 40px;
+
+  --spacing-content-max: 1160px;
+  --spacing-reading-max: 690px;
+  --spacing-hero-max: 1280px;
+
+  --spacing-grid-gap: 24px;
+  --spacing-form-height: 48px;
+  --spacing-touch-target: 44px;
+
+  /* ── Box Shadows ─────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px oklch(25.3% 0.042 59.5 / 0.07);
+  --shadow-sm: 0 8px 22px oklch(25.3% 0.042 59.5 / 0.08);
+  --shadow-md: 0 16px 38px oklch(25.3% 0.042 59.5 / 0.1);
+  --shadow-lg: 0 28px 64px oklch(25.3% 0.042 59.5 / 0.14);
+
+  /* ── Typography scale ────────────────────────────────── */
+
+  /* font sizes */
+  --text-display-xl: 64px;
+  --text-display-lg: 52px;
+  --text-headline-lg: 40px;
+  --text-headline-md: 32px;
+  --text-headline-sm: 24px;
+  --text-body-lg: 19px;
+  --text-body-md: 16px;
+  --text-body-sm: 14px;
+  --text-label-lg: 16px;
+  --text-label-md: 14px;
+  --text-label-sm: 12px;
+  --text-quote: 28px;
+
+  /* line heights */
+  --leading-display-xl: 1;
+  --leading-display-lg: 1.04;
+  --leading-headline-lg: 1.1;
+  --leading-headline-md: 1.16;
+  --leading-headline-sm: 1.22;
+  --leading-body-lg: 1.72;
+  --leading-body-md: 1.66;
+  --leading-body-sm: 1.56;
+  --leading-label-lg: 1.2;
+  --leading-label-md: 1.16;
+  --leading-label-sm: 1.14;
+  --leading-quote: 1.34;
+
+  /* letter spacing */
+  --tracking-display-xl: -0.028em;
+  --tracking-display-lg: -0.024em;
+  --tracking-headline-lg: -0.018em;
+  --tracking-headline-md: -0.012em;
+  --tracking-headline-sm: -0.006em;
+  --tracking-body: 0em;
+  --tracking-label-lg: 0.012em;
+  --tracking-label-md: 0.026em;
+  --tracking-label-sm: 0.05em;
+  --tracking-quote: -0.008em;
+}
+
+/* ── Typography utility classes ──────────────────────────────
+   Tailwind utilities for each type role.
+   Use these as @apply sources or compose them directly.
+   ──────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .type-display-xl {
+    font-family: var(--font-serif);
+    font-size: var(--text-display-xl);
+    font-weight: 700;
+    line-height: var(--leading-display-xl);
+    letter-spacing: var(--tracking-display-xl);
+  }
+
+  .type-display-lg {
+    font-family: var(--font-serif);
+    font-size: var(--text-display-lg);
+    font-weight: 700;
+    line-height: var(--leading-display-lg);
+    letter-spacing: var(--tracking-display-lg);
+  }
+
+  .type-headline-lg {
+    font-family: var(--font-serif);
+    font-size: var(--text-headline-lg);
+    font-weight: 700;
+    line-height: var(--leading-headline-lg);
+    letter-spacing: var(--tracking-headline-lg);
+  }
+
+  .type-headline-md {
+    font-family: var(--font-serif);
+    font-size: var(--text-headline-md);
+    font-weight: 700;
+    line-height: var(--leading-headline-md);
+    letter-spacing: var(--tracking-headline-md);
+  }
+
+  .type-headline-sm {
+    font-family: var(--font-serif);
+    font-size: var(--text-headline-sm);
+    font-weight: 700;
+    line-height: var(--leading-headline-sm);
+    letter-spacing: var(--tracking-headline-sm);
+  }
+
+  .type-body-lg {
+    font-family: var(--font-serif);
+    font-size: var(--text-body-lg);
+    font-weight: 400;
+    line-height: var(--leading-body-lg);
+    letter-spacing: var(--tracking-body);
+  }
+
+  .type-body-md {
+    font-family: var(--font-serif);
+    font-size: var(--text-body-md);
+    font-weight: 400;
+    line-height: var(--leading-body-md);
+    letter-spacing: var(--tracking-body);
+  }
+
+  .type-body-sm {
+    font-family: var(--font-serif);
+    font-size: var(--text-body-sm);
+    font-weight: 400;
+    line-height: var(--leading-body-sm);
+    letter-spacing: var(--tracking-body);
+  }
+
+  .type-label-lg {
+    font-family: var(--font-serif);
+    font-size: var(--text-label-lg);
+    font-weight: 700;
+    line-height: var(--leading-label-lg);
+    letter-spacing: var(--tracking-label-lg);
+  }
+
+  .type-label-md {
+    font-family: var(--font-serif);
+    font-size: var(--text-label-md);
+    font-weight: 700;
+    line-height: var(--leading-label-md);
+    letter-spacing: var(--tracking-label-md);
+  }
+
+  .type-label-sm {
+    font-family: var(--font-serif);
+    font-size: var(--text-label-sm);
+    font-weight: 700;
+    line-height: var(--leading-label-sm);
+    letter-spacing: var(--tracking-label-sm);
+  }
+
+  .type-quote {
+    font-family: var(--font-serif);
+    font-size: var(--text-quote);
+    font-weight: 400;
+    font-style: italic;
+    line-height: var(--leading-quote);
+    letter-spacing: var(--tracking-quote);
+  }
+
+  .text-display-xl {
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+  }
+}

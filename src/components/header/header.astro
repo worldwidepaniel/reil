@@ -1,0 +1,72 @@
+---
+import { useTranslations } from "../../i18n/layout.ts";
+const locale = Astro.currentLocale;
+const i18n = useTranslations(locale);
+---
+
+<header
+  class="py-lg md:py-xl sticky top-0 left-0 z-[100] w-full transition-all duration-500"
+  id="main-header"
+>
+  <div class="px-gutter-mobile md:px-gutter-desktop">
+    <nav class="gap-y-md grid grid-cols-2 items-baseline md:grid-cols-12">
+      <div
+        class="animate-entrance col-span-2 md:col-span-4"
+        style="animation-delay: 0.1s"
+      >
+        <a class="group block" href="#">
+          <span
+            class="font-display-xl block text-[28px] leading-tight tracking-tight text-(--color-secondary) transition-transform duration-500 group-hover:translate-x-1 md:text-[32px]"
+            >Atelier Pszczelarskie</span
+          >
+          <span
+            class="font-label-sm mt-xxs block text-[12px] tracking-[0.5em] text-(--color-primary) uppercase"
+            >REIL</span
+          >
+        </a>
+      </div>
+      <div
+        class="space-x-lg lg:space-x-xl font-label-sm animate-entrance hidden items-baseline text-[11px] tracking-[0.2em] text-(--color-secondary)/80 uppercase md:col-span-6 lg:flex"
+        style="animation-delay: 0.2s"
+      >
+        <a
+          class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
+          href="#history">Nasza Historia</a
+        >
+        <a
+          class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
+          href="#miod">Miód</a
+        >
+        <a
+          class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
+          href="#proces">Proces</a
+        >
+        <a
+          class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
+          href="#wartosci">Wartości</a
+        >
+        <a
+          class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
+          href="#kontakt">Kontakt</a
+        >
+      </div>
+      <div
+        class="animate-entrance col-span-2 flex items-baseline justify-end md:col-span-2"
+        style="animation-delay: 0.3s"
+      >
+        <div
+          class="space-x-sm font-label-sm flex items-center text-[11px] tracking-widest text-(--color-secondary)/60"
+        >
+          <button
+            class="text-(--color-secondary) transition-colors hover:text-(--color-secondary)"
+            >PL</button
+          >
+          <span class="opacity-30">/</span>
+          <button class="transition-colors hover:text-(--color-secondary)"
+            >EN</button
+          >
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

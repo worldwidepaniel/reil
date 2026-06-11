@@ -1,17 +1,108 @@
 ---
-
+import Layout from "../layouts/main.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <div id="hero" class="d-flex relative w-full flex-col">
+    <div
+      id="model-container"
+      class="sticky inset-0 top-0 z-1 h-[100svh] w-full"
+    >
+      <canvas id="three-canvas" class="h-full w-full"></canvas>
+    </div>
+    <div
+      id="transition-move"
+      class="relative mt-[-100svh] flex h-[80svh] w-full flex-col"
+    >
+      <div class="clip-text">
+        <h1
+          class="hero-title font-display-xl text-display-xl flex flex-col leading-[0.9] text-(--color-secondary)"
+        >
+          <div class="overflow-hidden py-2">
+            <span class="inline-block translate-y-full opacity-0"
+              >Prawdziwy</span
+            >
+          </div>
+          <div class="overflow-hidden md:pl-[15%]">
+            <span
+              t
+              class="accent-word inline-block translate-y-full text-(--color-primary) italic opacity-0"
+              >Smak</span
+            >
+          </div>
+          <div class="overflow-hidden py-2">
+            <span class="inline-block translate-y-full opacity-0">Natury</span>
+          </div>
+        </h1>
+      </div>
+
+      <div class="ml-auto w-1/2">
+        <div class="hero-description translate-y-8 opacity-0">
+          <p
+            class="font-quote text-quote text-on-surface-muted mb-xl pl-lg py-xs border-l-2 border-(--color-primary)"
+          >
+            Miód, który sami chcielibyśmy kupować. Z pasieki w Starym Żaganiu,
+            gdzie tradycja spotyka czystość.
+          </p>
+          <div class="gap-md flex flex-wrap">
+            <a
+              class="hero-btn group text-surface font-label-lg px-xl h-touch-target relative inline-flex items-center justify-center overflow-hidden rounded-full bg-(--color-secondary) transition-all duration-300 hover:scale-[1.03] hover:bg-black"
+              href="#miod"
+            >
+              <span class="relative z-10 px-[1ch]">Poznaj miody</span>
+              <span
+                class="absolute right-4 -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
+                >→</span
+              >
+            </a>
+            <a
+              class="hero-btn-alt font-label-lg px-xl h-touch-target inline-flex items-center justify-center rounded-full border border-(--color-secondary)/20 text-(--color-secondary) transition-all hover:scale-[1.03] hover:bg-(--color-secondary)/10"
+              href="#kontakt"
+            >
+              Kontakt
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bottom-xl gap-xs absolute left-1/2 flex -translate-x-1/2 flex-col items-center opacity-0"
+        id="scroll-indicator"
+      >
+        <span
+          class="font-label-sm text-[10px] tracking-widest text-(--color-secondary)/40 uppercase"
+          >Przewiń</span
+        >
+        <div
+          class="h-12 w-[1px] origin-top bg-gradient-to-b from-(--color-primary) to-transparent"
+          id="scroll-line"
+        >
+        </div>
+      </div>
+    </div>
+
+    <div class="glb-anim h-[200svh] w-full"></div>
+  </div>
+  <div id="history" class="flex flex-row bg-(--color-background-muted) items-center">
+    <div class="w-1/2">
+      <img src="https://images.unsplash.com/photo-1602867693070-f9db4f42463a?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    </div>
+    <div class="flex flex-col gap-[1lh] w-1/2">
+    <h1 class="text-headline-lg">Z szacunku do tradycji.</h1>
+    <p class="type-body-lg">
+      Nasza historia zaczyna się w Starym Żaganiu, gdzie czas płynie w rytmie
+      wyznaczanym przez pory roku. Atelier Pszczelarskie REIL to nie tylko
+      pasieka, to rodzinne dziedzictwo, pielęgnowanie przez pokoleń.
+    </p>
+    <p class="type-body-lg">
+      Wierzymy, że najlepszy miód to ten, w który włożono serce i czas. Nie
+      przyspieszamy procesów. Pozwalamy naturze wykonać swoją pracę, a jedynie z
+      pokorą odbieramy to, co ma nam do zaoferowania. Nasze ule stoją wśród
+      dzikich łąk i starych lasów, i na poligonach wojskowych.
+    </p>
+    </div>
+  </div>
+</Layout>
+
+<script src="../scripts/gsap.js"></script>
+<script src="../scripts/three.js"></script>
