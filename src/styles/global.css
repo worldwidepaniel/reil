@@ -12,6 +12,7 @@
 
 body {
   font-family: var(--font-serif);
+  background-color: var(--color-primary-soft);
 }
 
 .clip-text {
@@ -29,6 +30,7 @@ body {
   --color-primary-hover: oklch(64.7% 0.162 54);
   --color-primary-pressed: oklch(58.7% 0.147 54);
   --color-primary-soft: oklch(94.7% 0.041 73.2);
+  --color-primary-pressed-text: oklch(0.584 0.0211 62.22);
 
   /* Secondary — chestnut */
   --color-secondary: oklch(25.3% 0.042 59.5);
@@ -233,6 +235,7 @@ body {
     font-weight: 400;
     line-height: var(--leading-body-md);
     letter-spacing: var(--tracking-body);
+    color: var(--color-primary-pressed-text);
   }
 
   .type-body-sm {
@@ -241,6 +244,7 @@ body {
     font-weight: 400;
     line-height: var(--leading-body-sm);
     letter-spacing: var(--tracking-body);
+    color: var(--color-on-primary);
   }
 
   .type-label-lg {
@@ -265,6 +269,7 @@ body {
     font-weight: 700;
     line-height: var(--leading-label-sm);
     letter-spacing: var(--tracking-label-sm);
+    color: var(--color-primary);
   }
 
   .type-quote {
@@ -281,5 +286,12 @@ body {
     line-height: 0.95;
     letter-spacing: -0.04em;
     font-weight: 700;
+  }
+}
+
+@layer base {
+  section,
+  footer {
+    @apply px-gutter-mobile md:px-gutter-desktop;
   }
 }

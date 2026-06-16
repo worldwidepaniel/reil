@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/main.astro";
+import honeys from "../data/honeys.json";
+import Card from "../components/card/card.astro";
 ---
 
 <Layout>
-  <div id="hero" class="d-flex relative w-full flex-col">
+  <section id="hero" class="d-flex relative w-full flex-col">
     <div
       id="model-container"
       class="sticky inset-0 top-0 z-1 h-[100svh] w-full"
@@ -36,18 +38,20 @@ import Layout from "../layouts/main.astro";
         </h1>
       </div>
 
-      <div class="ml-auto w-1/2">
+      <div
+        class="lg:mt-xl relative z-2 mt-[5svh] w-full md:mt-[15svh] lg:mt-0 lg:ml-auto lg:w-1/2"
+      >
         <div class="hero-description translate-y-8 opacity-0">
           <p
-            class="font-quote text-quote text-on-surface-muted mb-xl pl-lg py-xs border-l-2 border-(--color-primary)"
+            class="text-on-surface-muted mb-sm md:text-quote lg:mb-xl pl-lg py-xs md:text-revert border-l-2 border-(--color-primary) text-lg"
           >
             Miód, który sami chcielibyśmy kupować. Z pasieki w Starym Żaganiu,
             gdzie tradycja spotyka czystość.
           </p>
-          <div class="gap-md flex flex-wrap">
+          <div class="gap-md flex flex-col flex-wrap md:flex-row">
             <a
-              class="hero-btn group text-surface font-label-lg px-xl h-touch-target relative inline-flex items-center justify-center overflow-hidden rounded-full bg-(--color-secondary) transition-all duration-300 hover:scale-[1.03] hover:bg-black"
-              href="#miod"
+              class="hero-btn group text-surface font-label-lg px-xl h-touch-target inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full bg-(--color-secondary) transition-all duration-300 hover:scale-[1.03] hover:bg-black"
+              href="#honeys"
             >
               <span class="relative z-10 px-[1ch]">Poznaj miody</span>
               <span
@@ -56,8 +60,8 @@ import Layout from "../layouts/main.astro";
               >
             </a>
             <a
-              class="hero-btn-alt font-label-lg px-xl h-touch-target inline-flex items-center justify-center rounded-full border border-(--color-secondary)/20 text-(--color-secondary) transition-all hover:scale-[1.03] hover:bg-(--color-secondary)/10"
-              href="#kontakt"
+              class="hero-btn-alt font-label-lg px-xl h-touch-target inline-flex cursor-pointer items-center justify-center rounded-full border border-(--color-secondary)/20 text-(--color-secondary) transition-all hover:scale-[1.03] hover:bg-(--color-secondary)/10"
+              href="#contact"
             >
               Kontakt
             </a>
@@ -66,7 +70,7 @@ import Layout from "../layouts/main.astro";
       </div>
 
       <div
-        class="bottom-xl gap-xs absolute left-1/2 flex -translate-x-1/2 flex-col items-center opacity-0"
+        class="lg:bottom-xl gap-xs absolute bottom-0 left-1/2 flex -translate-x-1/2 flex-col items-center opacity-0"
         id="scroll-indicator"
       >
         <span
@@ -81,28 +85,85 @@ import Layout from "../layouts/main.astro";
       </div>
     </div>
 
-    <div class="glb-anim h-[200svh] w-full"></div>
-  </div>
-  <div id="history" class="flex flex-row bg-(--color-background-muted) items-center">
-    <div class="w-1/2">
-      <img src="https://images.unsplash.com/photo-1602867693070-f9db4f42463a?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <div class="glb-anim flex h-[200svh] w-full justify-end">
+      <div id="bees-container" class="relative z-2 mt-auto h-[100svh] w-full">
+        <canvas id="bees-canvas" class="h-full w-full"></canvas>
+      </div>
     </div>
-    <div class="flex flex-col gap-[1lh] w-1/2">
-    <h1 class="text-headline-lg">Z szacunku do tradycji.</h1>
-    <p class="type-body-lg">
-      Nasza historia zaczyna się w Starym Żaganiu, gdzie czas płynie w rytmie
-      wyznaczanym przez pory roku. Atelier Pszczelarskie REIL to nie tylko
-      pasieka, to rodzinne dziedzictwo, pielęgnowanie przez pokoleń.
-    </p>
-    <p class="type-body-lg">
-      Wierzymy, że najlepszy miód to ten, w który włożono serce i czas. Nie
-      przyspieszamy procesów. Pozwalamy naturze wykonać swoją pracę, a jedynie z
-      pokorą odbieramy to, co ma nam do zaoferowania. Nasze ule stoją wśród
-      dzikich łąk i starych lasów, i na poligonach wojskowych.
-    </p>
+  </section>
+  <section
+    id="history"
+    class="flex flex-col items-center gap-(--spacing-grid-gap) bg-(--color-background-muted) py-4 md:flex-row"
+  >
+    <div class="w-full md:w-2/3 lg:w-1/2">
+      <img
+        class="max-h-[80svh] w-full object-contain"
+        src="https://images.unsplash.com/photo-1602867693070-f9db4f42463a?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
     </div>
-  </div>
+    <div class="flex w-full flex-col gap-[1lh] lg:w-1/2">
+      <h1 class="text-headline-lg">Z szacunku do tradycji.</h1>
+      <p class="type-body-md">
+        Nasza historia zaczyna się w Starym Żaganiu, gdzie czas płynie w rytmie
+        wyznaczanym przez pory roku. Atelier Pszczelarskie REIL to nie tylko
+        pasieka, to rodzinne dziedzictwo, pielęgnowanie przez pokoleń.
+      </p>
+      <p class="type-body-md">
+        Wierzymy, że najlepszy miód to ten, w który włożono serce i czas. Nie
+        przyspieszamy procesów. Pozwalamy naturze wykonać swoją pracę, a jedynie
+        z pokorą odbieramy to, co ma nam do zaoferowania. Nasze ule stoją wśród
+        dzikich łąk i starych lasów, i na poligonach wojskowych.
+      </p>
+    </div>
+  </section>
+  <section class="flex flex-col items-center gap-4 py-4" id="honeys">
+    <h1 class="text-headline-lg">Dary natury</h1>
+    <p class="type-body-md w-full text-center lg:w-1/2">
+      Każdy słoik miodu to zapis chwili, konkretnego miejsca, pogody i
+      kwitnących roślin. Oferujemy wyłącznie miody surowe, niedosładzane,
+      nierozgrzewane i niefiltrowane mechanicznie.
+    </p>
+    <div
+      class="mt-4 grid w-full grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        honeys.map((honey) => (
+          <Card
+            name={honey.name}
+            season={honey.season}
+            description={honey.description}
+            src={honey.src}
+          />
+        ))
+      }
+    </div>
+  </section>
+  <section
+    class="flex flex-row items-center gap-(--spacing-grid-gap) bg-(--color-background-muted) py-4"
+    id="contact"
+  >
+    <div class="flex w-full flex-col gap-4 md:w-3/5 lg:w-2/5">
+      <h1 class="text-headline-md">Porozmawiajmy.</h1>
+      <p class="text-body-md">
+        Chcesz zapytać o dostępność miodów z ostatnich zbiorów? Zapraszamy do
+        kontaktu bezpośredniego. Każda partia miodu jest limitowana.
+      </p>
+      <div class="type-label-sm flex flex-col gap-[0.2lh]">
+        E-mail
+        <p class="type-body-md">kontakt@atelier-reil.pl</p>
+      </div>
+      <div class="type-label-sm flex flex-col gap-[0.2lh]">
+        Telefon
+        <p class="type-body-md">+48 123 456 789</p>
+      </div>
+      <div class="type-label-sm flex flex-col gap-[0.2lh]">
+        Adres Pasieki
+        <p class="type-body-md">Stary Żagań, XX, Polska</p>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <script src="../scripts/gsap.js"></script>
-<script src="../scripts/three.js"></script>
+<script src="../scripts/bees.js"></script>
+<script src="../scripts/jar.js"></script>

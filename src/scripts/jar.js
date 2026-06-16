@@ -172,47 +172,6 @@ new GLTFLoader().load("/assets/glb/pasieka.glb", (gltf) => {
   });
 });
 
-const historyTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#history",
-    start: "top 25%", // The animation fires when the top of the section reaches 75% down the viewport
-    once: true, // Play exactly once, then destroy the trigger
-  },
-});
-
-historyTl
-  .from("#history img", {
-    y: 40, // Start 40px down
-    opacity: 0, // Start invisible
-    duration: 1,
-    ease: "power3.out", // A smooth, decelerating ease (very "Apple" style)
-  })
-
-  // 2. Animate the Header (Overlapping the image animation)
-  .from(
-    "#history h1",
-    {
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out",
-    },
-    "-=0.6",
-  ) // The magic: Start this 0.6 seconds BEFORE the image finishes
-
-  // 3. Stagger the Paragraphs
-  .from(
-    "#history p",
-    {
-      y: 20,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out",
-      stagger: 0.2, // Wait 0.2 seconds between animating paragraph 1 and paragraph 2
-    },
-    "-=0.6",
-  );
-
 // -----------------------------
 // RESIZE
 // -----------------------------
