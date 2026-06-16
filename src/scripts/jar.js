@@ -110,7 +110,7 @@ new GLTFLoader().load("/assets/glb/pasieka.glb", (gltf) => {
     .timeline({
       scrollTrigger: {
         trigger: "#transition-move",
-        start: "top top",
+        start: "top +=200px",
         end: "bottom top",
         scrub: 1,
       },

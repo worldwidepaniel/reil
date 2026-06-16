@@ -39,11 +39,11 @@ import Card from "../components/card/card.astro";
       </div>
 
       <div
-        class="lg:mt-xl relative z-2 mt-[5svh] w-full md:mt-[15svh] lg:mt-0 lg:ml-auto lg:w-1/2"
+        class="lg:mt-xl mb-xl relative z-2 mt-[5svh] mt-auto w-full md:mt-[15svh] lg:mt-0 lg:mb-0 lg:ml-auto lg:w-1/2"
       >
         <div class="hero-description translate-y-8 opacity-0">
           <p
-            class="text-on-surface-muted mb-sm md:text-quote lg:mb-xl pl-lg py-xs md:text-revert border-l-2 border-(--color-primary) text-lg"
+            class="text-on-surface-muted mb-sm lg:text-quote lg:mb-xl pl-lg py-xs md:text-revert border-l-2 border-(--color-primary) text-lg md:text-[38px]"
           >
             Miód, który sami chcielibyśmy kupować. Z pasieki w Starym Żaganiu,
             gdzie tradycja spotyka czystość.
@@ -70,7 +70,7 @@ import Card from "../components/card/card.astro";
       </div>
 
       <div
-        class="lg:bottom-xl gap-xs absolute bottom-0 left-1/2 flex -translate-x-1/2 flex-col items-center opacity-0"
+        class="lg:bottom-xl gap-xs mt-auto flex flex-col items-center opacity-0"
         id="scroll-indicator"
       >
         <span
@@ -150,15 +150,25 @@ import Card from "../components/card/card.astro";
       </p>
       <div class="type-label-sm flex flex-col gap-[0.2lh]">
         E-mail
-        <p class="type-body-md">kontakt@atelier-reil.pl</p>
+        <a
+          href="mailto:kontakt@atelier-reil.pl"
+          class="type-body-md cursor-pointer">kontakt@atelier-reil.pl</a
+        >
       </div>
       <div class="type-label-sm flex flex-col gap-[0.2lh]">
         Telefon
-        <p class="type-body-md">+48 123 456 789</p>
+        <a href="tel:+48123456789" class="type-body-md cursor-pointer"
+          >+48 123 456 789</a
+        >
       </div>
       <div class="type-label-sm flex flex-col gap-[0.2lh]">
         Adres Pasieki
-        <p class="type-body-md">Stary Żagań, XX, Polska</p>
+        <a
+          href="https://maps.app.goo.gl/1uE1pBjqV8oyk2mbA"
+          target="_blank"
+          rel="nofollow noopener"
+          class="type-body-md cursor-pointer">Stary Żagań, XX, Polska</a
+        >
       </div>
     </div>
   </section>
