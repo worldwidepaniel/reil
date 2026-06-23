@@ -1,32 +1,67 @@
 [
   {
     "src": "/assets/images/akacja.webp",
-    "name": "Miód Akacjowy",
-    "description": "Lekki, wiosenny, o delikatnym kwiatowym aromacie. Idealny na początek dnia.",
-    "season": "Wiosna"
+    "pl": {
+      "name": "Miód Akacjowy",
+      "description": "Lekki, wiosenny, o delikatnym kwiatowym aromacie. Idealny na początek dnia.",
+      "season": "Wiosna"
+    },
+    "en": {
+      "name": "Acacia Honey",
+      "description": "Light and spring-fresh, with a delicate floral aroma. Perfect for starting the day.",
+      "season": "Spring"
+    }
   },
   {
     "src": "/assets/images/wielokwiat.webp",
-    "name": "Miód Wielokwiatowy",
-    "description": "Bogaty i różnorodny, pełen aromatów wielu kwiatów. Naturalna słodycz zamknięta w słoiku.",
-    "season": "Wiosna-Lato"
+    "pl": {
+      "name": "Miód Wielokwiatowy",
+      "description": "Bogaty i różnorodny, pełen aromatów wielu kwiatów. Naturalna słodycz zamknięta w słoiku.",
+      "season": "Wiosna-Lato"
+    },
+    "en": {
+      "name": "Wildflower Honey",
+      "description": "Rich and diverse, filled with the aromas of many blossoms. Natural sweetness captured in a jar.",
+      "season": "Spring–Summer"
+    }
   },
   {
     "src": "/assets/images/rzepak.webp",
-    "name": "Miód Rzepakowy",
-    "description": "Jasny, kremowy i wyjątkowo łagodny. Ceniony za subtelny smak i aksamitną konsystencję.",
-    "season": "Wiosna"
+    "pl": {
+      "name": "Miód Rzepakowy",
+      "description": "Jasny, kremowy i wyjątkowo łagodny. Ceniony za subtelny smak i aksamitną konsystencję.",
+      "season": "Wiosna"
+    },
+    "en": {
+      "name": "Rapeseed Honey",
+      "description": "Pale, creamy, and exceptionally mild. Appreciated for its subtle flavor and velvety texture.",
+      "season": "Spring"
+    }
   },
   {
     "src": "/assets/images/lipa.webp",
-    "name": "Miód Lipowy",
-    "description": "Aromatyczny i wyrazisty, z nutą kwiatów lipy. Prawdziwy smak letnich zbiorów.",
-    "season": "Lato"
+    "pl": {
+      "name": "Miód Lipowy",
+      "description": "Aromatyczny i wyrazisty, z nutą kwiatów lipy. Prawdziwy smak letnich zbiorów.",
+      "season": "Lato"
+    },
+    "en": {
+      "name": "Linden Honey",
+      "description": "Fragrant and distinctive, with notes of linden blossoms. The true taste of summer harvests.",
+      "season": "Summer"
+    }
   },
   {
     "src": "/assets/images/wrzos.webp",
-    "name": "Miód Wrzosowy",
-    "description": "Głęboki w smaku, z charakterystyczną, lekko pikantną nutą. Klasyk późnego lata.",
-    "season": "późne Lato-Jesień"
+    "pl": {
+      "name": "Miód Wrzosowy",
+      "description": "Głęboki w smaku, z charakterystyczną, lekko pikantną nutą. Klasyk późnego lata.",
+      "season": "Późne Lato–Jesień"
+    },
+    "en": {
+      "name": "Heather Honey",
+      "description": "Deep and complex in flavor, with a characteristic lightly spicy note. A classic of late summer.",
+      "season": "Late Summer–Autumn"
+    }
   }
 ]

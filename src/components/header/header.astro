@@ -17,7 +17,7 @@ const i18n = useTranslations(locale);
         <a class="group block" href="#">
           <span
             class="font-display-xl block text-[28px] leading-tight tracking-tight text-(--color-secondary) transition-transform duration-500 group-hover:translate-x-1 md:text-[32px]"
-            >Atelier Pszczelarskie</span
+            >{i18n.header.main}</span
           >
           <span
             class="font-label-sm mt-xxs block text-[12px] tracking-[0.5em] text-(--color-primary) uppercase"
@@ -31,23 +31,23 @@ const i18n = useTranslations(locale);
       >
         <a
           class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
-          href="#history">Nasza Historia</a
+          href="#history">{i18n.header.nav.history}</a
         >
         <a
           class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
-          href="#miod">Miód</a
+          href="#miod">{i18n.header.nav.honey}</a
         >
         <a
           class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
-          href="#proces">Proces</a
+          href="#proces">{i18n.header.nav.process}</a
         >
         <a
           class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
-          href="#wartosci">Wartości</a
+          href="#wartosci">{i18n.header.nav.values}</a
         >
         <a
           class="nav-link-underline relative transition-colors hover:text-(--color-secondary)"
-          href="#kontakt">Kontakt</a
+          href="#kontakt">{i18n.header.nav.contact}</a
         >
       </div>
       <div
@@ -57,13 +57,16 @@ const i18n = useTranslations(locale);
         <div
           class="space-x-sm font-label-sm flex items-center text-[11px] tracking-widest text-(--color-secondary)/60"
         >
-          <button
-            class="text-(--color-secondary) transition-colors hover:text-(--color-secondary)"
-            >PL</button
+          <a
+            href="/"
+            class="cursor-pointer text-(--color-secondary) transition-colors hover:text-(--color-secondary)"
+            >PL</a
           >
           <span class="opacity-30">/</span>
-          <button class="transition-colors hover:text-(--color-secondary)"
-            >EN</button
+          <a
+            href="/en"
+            class="cursor-pointer transition-colors hover:text-(--color-secondary)"
+            >EN</a
           >
         </div>
       </div>

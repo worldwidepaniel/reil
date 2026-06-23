@@ -7,7 +7,7 @@ export default defineConfig({
   srcDir: "./src",
   i18n: {
     locales: ["pl", "en"],
-    defaultLocale: "en",
+    defaultLocale: "pl",
   },
   vite: {
     plugins: [tailwindcss()],
