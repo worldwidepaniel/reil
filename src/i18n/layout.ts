@@ -1,5 +1,8 @@
 export const translations = {
   en: {
+    card: {
+      ask: "Enquire for availability",
+    },
     meta: { title: "Apiarist Atelier REIL" },
     header: {
       main: "Apiarist Atelier",
@@ -18,6 +21,9 @@ export const translations = {
   },
   pl: {
     meta: { title: "Atelier Pszczelarskie REIL" },
+    card: {
+      ask: "Zapytaj o dostępność",
+    },
     header: {
       main: "Atelier Pszczelarskie",
       nav: {

@@ -1,5 +1,9 @@
 ---
 const { src, name, description, season } = Astro.props;
+
+import { useTranslations } from "../../i18n/layout.ts";
+const locale = Astro.currentLocale;
+const i18n = useTranslations(locale);
 ---
 
 <div class="group relative overflow-hidden rounded-md bg-white">
@@ -12,7 +16,7 @@ const { src, name, description, season } = Astro.props;
   <div class="flex flex-col gap-2 px-6 py-6">
     <h3>{name}</h3>
     <p class="type-body-md">{description}</p>
-    <a href="#contact" class="type-label-sm">Zapytaj o dostępność</a>
+    <a href="#contact" class="type-label-sm">{i18n.card.ask}</a>
   </div>
   <div class="absolute top-3 left-3 rounded-lg bg-white px-4 py-1">
     {season}
