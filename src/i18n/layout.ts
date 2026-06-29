@@ -13,13 +13,13 @@ export const translations = {
         title:
           "Apiarist Atelier REIL | Authentic Raw Honey from Stary Żagań, Poland",
         desc: "Discover authentic, raw, and unheated honey from our family apiary in Stary Żagań.",
-        image: "https://www.atelier-reil.pl/og-image.png",
+        image: "https://www.reil.pages.dev/og-image.png",
       },
       twitter: {
         card: "summary_large_image",
         title: "Apiarist Atelier REIL | Authentic Raw Honey",
         desc: "Discover authentic, raw, and unheated honey from our family apiary in Stary Żagań.",
-        image: "https://www.atelier-reil.pl/og-image.png",
+        image: "https://www.reil.pages.dev/og-image.png",
       },
       jsonLd: [
         {
@@ -28,9 +28,9 @@ export const translations = {
           name: "Apiarist Atelier REIL",
           description:
             "A family heritage apiary in Stary Żagań offering only raw, unsweetened, unheated, and mechanically unfiltered honey.",
-          url: "https://www.atelier-reil.pl/en",
+          url: "https://www.reil.pages.dev/en",
           telephone: "+48123456789",
-          email: "kontakt@atelier-reil.pl",
+          email: "kontakt@reil.pages.dev",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Stary Żagań 46",
@@ -142,13 +142,13 @@ export const translations = {
         title:
           "Atelier Pszczelarskie REIL | Prawdziwy, Surowy Miód ze Starego Żagania",
         desc: "Kup prawdziwy, niedosładzany i niefiltrowany miód z rodzinnej pasieki w Starym Żaganiu.",
-        image: "https://www.atelier-reil.pl/og-image.png",
+        image: "https://www.reil.pages.dev/og-image.png",
       },
       twitter: {
         card: "summary_large_image",
         title: "Atelier Pszczelarskie REIL | Prawdziwy, Surowy Miód",
         desc: "Kup prawdziwy, niedosładzany i niefiltrowany miód z rodzinnej pasieki w Starym Żaganiu.",
-        image: "https://www.atelier-reil.pl/og-image.png",
+        image: "https://www.reil.pages.dev/og-image.png",
       },
       jsonLd: [
         {
@@ -157,9 +157,9 @@ export const translations = {
           name: "Atelier Pszczelarskie REIL",
           description:
             "Rodzinne dziedzictwo ze Starego Żagania. Oferujemy wyłącznie miody surowe, niedosładzane, nierozgrzewane i niefiltrowane mechanicznie.",
-          url: "https://www.atelier-reil.pl",
+          url: "https://www.reil.pages.dev",
           telephone: "+48123456789",
-          email: "kontakt@atelier-reil.pl",
+          email: "kontakt@reil.pages.dev",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Stary Żagań 46",
