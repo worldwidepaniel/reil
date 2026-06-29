@@ -13,13 +13,13 @@ export const translations = {
         title:
           "Apiarist Atelier REIL | Authentic Raw Honey from Stary Żagań, Poland",
         desc: "Discover authentic, raw, and unheated honey from our family apiary in Stary Żagań.",
-        image: "https://www.atelier-reil.pl/og-image.jpg",
+        image: "https://www.atelier-reil.pl/og-image.png",
       },
       twitter: {
         card: "summary_large_image",
         title: "Apiarist Atelier REIL | Authentic Raw Honey",
         desc: "Discover authentic, raw, and unheated honey from our family apiary in Stary Żagań.",
-        image: "https://www.atelier-reil.pl/og-image.jpg",
+        image: "https://www.atelier-reil.pl/og-image.png",
       },
       jsonLd: [
         {
@@ -142,13 +142,13 @@ export const translations = {
         title:
           "Atelier Pszczelarskie REIL | Prawdziwy, Surowy Miód ze Starego Żagania",
         desc: "Kup prawdziwy, niedosładzany i niefiltrowany miód z rodzinnej pasieki w Starym Żaganiu.",
-        image: "https://www.atelier-reil.pl/og-image.jpg",
+        image: "https://www.atelier-reil.pl/og-image.png",
       },
       twitter: {
         card: "summary_large_image",
         title: "Atelier Pszczelarskie REIL | Prawdziwy, Surowy Miód",
         desc: "Kup prawdziwy, niedosładzany i niefiltrowany miód z rodzinnej pasieki w Starym Żaganiu.",
-        image: "https://www.atelier-reil.pl/og-image.jpg",
+        image: "https://www.atelier-reil.pl/og-image.png",
       },
       jsonLd: [
         {
