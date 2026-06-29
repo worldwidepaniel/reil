@@ -1,5 +1,5 @@
 ---
-const { src, name, description, season } = Astro.props;
+const { src, alt, name, description, season } = Astro.props;
 
 import { useTranslations } from "../../i18n/layout.ts";
 const locale = Astro.currentLocale;
@@ -10,6 +10,7 @@ const i18n = useTranslations(locale);
   <div class="overflow-hidden">
     <img
       src={src}
+      alt={alt}
       class="transition-transform duration-700 group-hover:scale-110"
     />
   </div>

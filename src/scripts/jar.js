@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -59,6 +60,25 @@ const END_POSITION = { x: 0.75, y: -0.75 };
 // -----------------------------
 new GLTFLoader().load("/assets/glb/pasieka.glb", (gltf) => {
   model = gltf.scene;
+
+  model.traverse((child) => {
+    if (child.isMesh && child.name !== "HoneyDipper_HoneyDipper_0") {
+      child.material = new THREE.MeshPhysicalMaterial({
+        color: 0xffffff,
+
+        metalness: 0,
+        roughness: 0.05,
+
+        transmission: 1.0, // glass core
+        thickness: 0.8,
+
+        ior: 1.5,
+        transparent: true,
+
+        envMapIntensity: 1.0,
+      });
+    }
+  });
 
   // center model
   const box = new THREE.Box3().setFromObject(model);

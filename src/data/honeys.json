@@ -4,12 +4,14 @@
     "pl": {
       "name": "Miód Akacjowy",
       "description": "Lekki, wiosenny, o delikatnym kwiatowym aromacie. Idealny na początek dnia.",
-      "season": "Wiosna"
+      "season": "Wiosna",
+      "alt": "Szklany słoik surowego, nierozgrzewanego miodu akacjowego zebranego wiosną przez Atelier Pszczelarskie REIL w Starym Żaganiu."
     },
     "en": {
       "name": "Acacia Honey",
       "description": "Light and spring-fresh, with a delicate floral aroma. Perfect for starting the day.",
-      "season": "Spring"
+      "season": "Spring",
+      "alt": "A glass jar of raw, unheated Acacia honey harvested in spring by Atelier Pszczelarskie REIL in Stary Żagań."
     }
   },
   {
@@ -17,12 +19,14 @@
     "pl": {
       "name": "Miód Wielokwiatowy",
       "description": "Bogaty i różnorodny, pełen aromatów wielu kwiatów. Naturalna słodycz zamknięta w słoiku.",
-      "season": "Wiosna-Lato"
+      "season": "Wiosna-Lato",
+      "alt": "Szklany słoik surowego, niefiltrowanego mechanicznie miodu wielokwiatowego z pasieki Atelier Pszczelarskie REIL w Starym Żaganiu."
     },
     "en": {
       "name": "Wildflower Honey",
       "description": "Rich and diverse, filled with the aromas of many blossoms. Natural sweetness captured in a jar.",
-      "season": "Spring–Summer"
+      "season": "Spring–Summer",
+      "alt": "A glass jar of raw, mechanically unfiltered Wildflower honey harvested by Atelier Pszczelarskie REIL in Stary Żagań."
     }
   },
   {
@@ -30,12 +34,14 @@
     "pl": {
       "name": "Miód Rzepakowy",
       "description": "Jasny, kremowy i wyjątkowo łagodny. Ceniony za subtelny smak i aksamitną konsystencję.",
-      "season": "Wiosna"
+      "season": "Wiosna",
+      "alt": "Szklany słoik surowego, kremowego miodu rzepakowego zebranego wiosną przez Atelier Pszczelarskie REIL w Starym Żaganiu."
     },
     "en": {
       "name": "Rapeseed Honey",
       "description": "Pale, creamy, and exceptionally mild. Appreciated for its subtle flavor and velvety texture.",
-      "season": "Spring"
+      "season": "Spring",
+      "alt": "A glass jar of raw, creamy Rapeseed honey harvested in spring by Atelier Pszczelarskie REIL in Stary Żagań."
     }
   },
   {
@@ -43,12 +49,14 @@
     "pl": {
       "name": "Miód Lipowy",
       "description": "Aromatyczny i wyrazisty, z nutą kwiatów lipy. Prawdziwy smak letnich zbiorów.",
-      "season": "Lato"
+      "season": "Lato",
+      "alt": "Szklany słoik prawdziwego, nierozgrzewanego miodu lipowego zebranego latem przez Atelier Pszczelarskie REIL w Starym Żaganiu."
     },
     "en": {
       "name": "Linden Honey",
       "description": "Fragrant and distinctive, with notes of linden blossoms. The true taste of summer harvests.",
-      "season": "Summer"
+      "season": "Summer",
+      "alt": "A glass jar of authentic, unheated Linden honey harvested in summer by Atelier Pszczelarskie REIL in Stary Żagań."
     }
   },
   {
@@ -56,12 +64,14 @@
     "pl": {
       "name": "Miód Wrzosowy",
       "description": "Głęboki w smaku, z charakterystyczną, lekko pikantną nutą. Klasyk późnego lata.",
-      "season": "Późne Lato–Jesień"
+      "season": "Późne Lato–Jesień",
+      "alt": "Szklany słoik surowego, nierozgrzewanego miodu wrzosowego zebranego późnym latem przez Atelier Pszczelarskie REIL w Starym Żaganiu."
     },
     "en": {
       "name": "Heather Honey",
       "description": "Deep and complex in flavor, with a characteristic lightly spicy note. A classic of late summer.",
-      "season": "Late Summer–Autumn"
+      "season": "Late Summer–Autumn",
+      "alt": "A glass jar of raw, unheated Heather honey harvested in late summer by Atelier Pszczelarskie REIL in Stary Żagań."
     }
   }
 ]

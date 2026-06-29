@@ -16,6 +16,52 @@ const i18n = useTranslations(locale);
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{i18n.meta.title}</title>
+    <meta name="title" content={i18n.meta.title} />
+    <meta name="description" content={i18n.meta.desc} />
+    <meta name="keywords" content={i18n.meta.keywords} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.atelier-reil.pl" />
+    <meta property="og:title" content={i18n.meta.og.title} />
+    <meta property="og:description" content={i18n.meta.og.desc} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:image" content={i18n.meta.og.image} />
+
+    <meta name="twitter:card" content={i18n.meta.twitter.card} />
+    <meta name="twitter:url" content="https://www.atelier-reil.pl" />
+    <meta name="twitter:title" content={i18n.meta.twitter.title} />
+    <meta name="twitter:description" content={i18n.meta.twitter.desc} />
+    <meta name="twitter:image" content={i18n.meta.twitter.image} /><link
+      rel="canonical"
+      href={new URL(Astro.url.pathname, Astro.site)}
+    />
+
+    <link rel="alternate" hreflang="pl" href="https://www.atelier-reil.pl/" />
+    <link rel="alternate" hreflang="en" href="https://www.atelier-reil.pl/en" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.atelier-reil.pl/"
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(i18n.meta.jsonLd)}
+    />
+    <noscript>
+      <style>
+        #hero .glb-anim {
+          display: none;
+        }
+        #hero * {
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: none !important;
+          clip-path: none !important;
+          translate: none;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <Header />
