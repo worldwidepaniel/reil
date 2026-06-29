@@ -5,10 +5,37 @@
    @theme. No tailwind.config.js required.
    Place this file as your main CSS entry point (or @import it),
    then add `@import "tailwindcss"` above it.
+
+   Font license is under /otl.txt
 */
 
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Regular Weight */
+@font-face {
+  font-family: "PT Serif" Georgia serif;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap; /* Improves loading performance */
+  src: url("/assets/fonts/PTSerif-Regular.ttf") format("truetype");
+}
+
+/* Bold Weight */
+@font-face {
+  font-family: "PT Serif" Georgia serif;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/PTSerif-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PT Serif" Georgia serif;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/PTSerif-Italic.ttf") format("truetype");
+}
 
 body {
   font-family: var(--font-serif);
