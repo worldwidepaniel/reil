@@ -1,0 +1,62 @@
+[
+  {
+    "en": {
+      "question": "Is your honey raw and unheated?",
+      "answer": "Yes, all honey from Atelier Pszczelarskie REIL is 100% raw and unheated. We never exceed natural hive temperatures during processing to ensure the honey retains its natural enzymes, vitamins, and health benefits."
+    },
+    "pl": {
+      "question": "Czy wasz miód jest surowy i nierozgrzewany?",
+      "answer": "Tak, cały miód z Atelier Pszczelarskie REIL jest w 100% surowy i nierozgrzewany. Nigdy nie przekraczamy naturalnej temperatury ula podczas obróbki, aby miód zachował swoje naturalne enzymy, witaminy i właściwości zdrowotne."
+    }
+  },
+  {
+    "en": {
+      "question": "Where is Atelier Pszczelarskie REIL located?",
+      "answer": "Our family apiary is located in Stary Żagań, Poland. Our hives are situated among wild meadows, ancient forests, and ecological military training grounds, far from industrial pollution."
+    },
+    "pl": {
+      "question": "Gdzie znajduje się pasieka Atelier Pszczelarskie REIL?",
+      "answer": "Nasza rodzinna pasieka znajduje się w Starym Żaganiu w Polsce. Nasze ule stoją wśród dzikich łąk, starych lasów i ekologicznych terenów wojskowych, z dala od zanieczyszczeń przemysłowych."
+    }
+  },
+  {
+    "en": {
+      "question": "Do you mechanically filter your honey?",
+      "answer": "No, our honey is mechanically unfiltered. We only strain it naturally to remove wax particles, ensuring that beneficial pollen and natural propolis remain in every jar."
+    },
+    "pl": {
+      "question": "Czy filtrujecie miód mechanicznie?",
+      "answer": "Nie, nasz miód jest niefiltrowany mechanicznie. Odcedzamy go jedynie naturalnie, aby usunąć drobiny wosku, dzięki czemu w każdym słoiku pozostaje drogocenny pyłek i naturalny propolis."
+    }
+  },
+  {
+    "en": {
+      "question": "Is there any added sugar or syrup in your honey?",
+      "answer": "Absolutely not. Our honey is completely unsweetened and contains zero additives. You are buying pure, natural nectar harvested directly by our bees in Stary Żagań."
+    },
+    "pl": {
+      "question": "Czy do waszego miodu dodawany jest cukier lub syrop?",
+      "answer": "Absolutnie nie. Nasz miód jest całkowicie niedosładzany i nie zawiera żadnych dodatków. Kupujesz czysty, naturalny nektar zebrany bezpośrednio przez nasze pszczoły w Starym Żaganiu."
+    }
+  },
+  {
+    "en": {
+      "question": "Why is my honey crystalizing, and is it normal?",
+      "answer": "Crystallization is a natural process and the best proof that the honey is raw and authentic. You can safely return it to a liquid state by gently warming the jar in a water bath below 40°C."
+    },
+    "pl": {
+      "question": "Dlaczego mój miód krystalizuje i czy to normalne?",
+      "answer": "Krystalizacja to naturalny proces i najlepszy dowód na to, że miód jest surowy i prawdziwy. Możesz bezpiecznie przywrócić go do postaci płynnej, delikatnie podgrzewając słoik w kąpieli wodnej w temperaturze poniżej 40°C."
+    }
+  },
+  {
+    "en": {
+      "question": "What types of honey do you harvest?",
+      "answer": "Depending on the season, we harvest limited batches of Acacia, Wildflower, Rapeseed, Linden, and Heather honey. Availability varies as we depend entirely on natural bloom cycles."
+    },
+    "pl": {
+      "question": "Jakie rodzaje miodu pozyskujecie?",
+      "answer": "W zależności od pory roku pozyskujemy limitowane partie miodu akacjowego, wielokwiatowego, rzepakowego, lipowego i wrzosowego. Dostępność jest różna, ponieważ całkowicie polegamy na naturalnych cyklach kwitnienia."
+    }
+  }
+]

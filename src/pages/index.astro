@@ -2,6 +2,7 @@
 import Layout from "../layouts/main.astro";
 import honeys from "../data/honeys.json";
 import Card from "../components/card/card.astro";
+import Faq from "../components/faq/faq.astro";
 
 import { useTranslations } from "../i18n/layout.ts";
 const locale = Astro.currentLocale;
@@ -88,15 +89,18 @@ const locale = Astro.currentLocale;
       </div>
     </div>
 
-    <div class="glb-anim flex h-[200svh] w-full justify-end">
-      <div id="bees-container" class="relative z-2 mt-auto h-[100svh] w-full">
-        <canvas id="bees-canvas" class="h-full w-full"></canvas>
-      </div>
+    <div
+      id="bees-container"
+      class="sticky top-[15svh] z-2 mt-auto h-[100svh] w-full"
+    >
+      <canvas id="bees-canvas" class="h-full w-full"></canvas>
     </div>
+
+    <div class="glb-anim flex h-[200svh] w-full justify-end"></div>
   </section>
   <section
     id="history"
-    class="flex flex-col items-center gap-(--spacing-grid-gap) bg-[linear-gradient(to_bottom,#FFEAD0_0%,oklch(0.8995_0.0567_73.93)_50%,#FFEAD0_100%)] py-4 md:flex-row"
+    class="flex flex-col items-center gap-(--spacing-grid-gap) bg-[linear-gradient(to_bottom,#FFEAD0_0%,oklch(0.8995_0.0567_73.93)_50%,#FFEAD0_100%)] py-4 text-center md:flex-row md:text-left"
   >
     <div class="w-full md:w-2/3 lg:w-1/2">
       <img
@@ -120,9 +124,12 @@ const locale = Astro.currentLocale;
       </p>
     </div>
   </section>
-  <section class="flex flex-col items-center gap-4 py-4" id="honeys">
+  <section
+    class="flex flex-col items-center gap-4 py-4 text-center"
+    id="honeys"
+  >
     <h1 class="text-headline-lg">Dary natury</h1>
-    <p class="type-body-md w-full text-center lg:w-1/2">
+    <p class="type-body-md w-full lg:w-1/2">
       Każdy słoik miodu to zapis chwili, konkretnego miejsca, pogody i
       kwitnących roślin. Oferujemy wyłącznie miody surowe, niedosładzane,
       nierozgrzewane i niefiltrowane mechanicznie.
@@ -143,6 +150,7 @@ const locale = Astro.currentLocale;
       }
     </div>
   </section>
+  <Faq />
   <section
     class="flex flex-row items-center gap-(--spacing-grid-gap) bg-[linear-gradient(to_bottom,#FFEAD0_0%,oklch(0.8995_0.0567_73.93)_50%,#FFEAD0_100%)] py-4"
     id="contact"

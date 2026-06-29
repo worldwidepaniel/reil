@@ -98,7 +98,7 @@ new GLTFLoader().load("/assets/glb/bee.glb", (gltf) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".glb-anim",
-      start: "bottom-=50svh bottom",
+      start: "center+=15svh bottom",
     },
   });
 
