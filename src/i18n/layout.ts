@@ -32,7 +32,7 @@ export const translations = {
         email: "kontakt@atelier-reil.pl",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Stary Żagań 46",
+          streetAddress: "Stary Żagań",
           addressLocality: "Stary Żagań",
           addressCountry: "PL",
         },
@@ -105,7 +105,7 @@ export const translations = {
         email: "kontakt@atelier-reil.pl",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Stary Żagań 46",
+          streetAddress: "Stary Żagań",
           addressLocality: "Stary Żagań",
           addressCountry: "PL",
         },
