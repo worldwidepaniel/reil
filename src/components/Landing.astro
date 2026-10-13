@@ -76,16 +76,13 @@ const meta = site ? { '@context': 'https://schema.org', '@type': 'Organization',
           </div>
           <div class="hero-art" aria-hidden="true">
             <div class="hero-disc"></div>
-            <span class="art-note">REIL / {locale === 'pl' ? 'BLISKO NATURY' : 'CLOSE TO NATURE'}</span>
-            <div class="static-jar"><div class="jar-lid"></div><div class="jar-glass"><div class="jar-label"><span>{t.craft}</span><b>reil.</b><span>{t.heroCaption}</span></div></div></div>
+            <div class="static-jar"><div class="jar-lid"></div><div class="jar-glass"><div class="jar-label"><span>{t.craft}</span><b>reil.</b><span>{t.jarCaption}</span></div></div></div>
             <div class="hero-orbit"><span>✳</span></div>
-            <p class="art-caption">{t.heroCaption}<span>↗</span></p>
           </div>
-          <div class="hero-bottom"><span>{t.scroll} <span aria-hidden="true">↓</span></span><span>REIL — {locale === 'pl' ? 'Blisko natury' : 'Close to nature'}</span></div>
         </section>
 
         <section class="story wrap" id="pracownia" aria-labelledby="story-title">
-          <div class="story-marker"><p class="eyebrow">{t.storyLabel}</p><div class="flower-mark" aria-hidden="true">✳</div><span class="small-caption">{t.heroCaption}</span></div>
+          <div class="story-marker"><p class="eyebrow">{t.storyLabel}</p><div class="flower-mark" aria-hidden="true">✳</div></div>
           <div class="story-copy"><h2 id="story-title">{t.storyTitle}<br /><em>{t.storyItalic}</em></h2><p>{t.storyText}</p><p class="story-foot">{t.storyFoot}</p></div>
         </section>
         <div id="scene" class="scene" aria-hidden="true"></div>

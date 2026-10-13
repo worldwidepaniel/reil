@@ -12,7 +12,7 @@ interface Product {
 interface Copy {
   title: string; description: string; nav: string[]; skip: string;
   craft: string; heroTop: string; heroMain: string; heroItalic: string;
-  intro: string; discover: string; scroll: string; heroCaption: string;
+  intro: string; discover: string; jarCaption: string;
   storyLabel: string; storyTitle: string; storyItalic: string; storyText: string; storyFoot: string;
   offerLabel: string; offerTitle: string; offerIntro: string; details: string; ask: string;
   taste: string; use: string; crystallization: string; close: string; draftProducts: string;
@@ -30,15 +30,15 @@ export const copy: Record<Locale, Copy> = {
     nav: ['Pracownia', 'Miody', 'Pytania', 'Kontakt'], skip: 'Przejdź do treści',
     craft: 'Pracownia pszczelarska', heroTop: 'Małe pszczoły.', heroMain: 'Wielka', heroItalic: 'przyjemność.',
     intro: 'Zatrzymaj się na chwilę. Odkryj świat miodu, w którym każda łyżeczka ma swój charakter.',
-    discover: 'Poznaj nasze miody', scroll: 'Dalej, w swoim tempie', heroCaption: 'Od pszczoły do słoika',
-    storyLabel: '01 / Pracownia', storyTitle: 'Dobre rzeczy', storyItalic: 'zaczynają się od małych.',
+    discover: 'Poznaj nasze miody', jarCaption: 'Od pszczoły do słoika',
+    storyLabel: '/ Pracownia', storyTitle: 'Dobre rzeczy', storyItalic: 'zaczynają się od małych.',
     storyText: 'Od kwiatu. Od pszczoły. Od uważności. W REIL zapraszamy do poznawania miodu przez jego smak, zapach i konsystencję. Bo między jednym a drugim słoikiem kryje się cały świat różnic.',
     storyFoot: 'Pięć odmian. Pięć sposobów na słodką chwilę.',
-    offerLabel: '02 / Kolekcja smaków', offerTitle: 'Znajdź swój ulubiony.',
+    offerLabel: '/ Kolekcja smaków', offerTitle: 'Znajdź swój ulubiony.',
     offerIntro: 'Delikatny czy wyrazisty? Kwiatowy czy z nutą goryczki? Poznaj charakter każdego z naszych miodów.',
     details: 'Poznaj szczegóły', ask: 'Zapytaj o ten miód', taste: 'Smak i aromat', use: 'Na dobry początek', crystallization: 'Krystalizacja', close: 'Zamknij szczegóły',
     draftProducts: 'Prezentacja robocza. Pory roku oznaczają typowy sezon świeżych zbiorów, nie bieżący stan zapasów. Opisy dotyczą typowych cech odmian; oferta i szczegóły partii wymagają potwierdzenia w pracowni.',
-    faqLabel: '03 / Warto wiedzieć', faqTitle: 'Ciekawość jest naturalna.', faqIntro: 'Kilka odpowiedzi, które pomogą lepiej poznać miód.',
+    faqLabel: '/ Warto wiedzieć', faqTitle: 'Ciekawość jest naturalna.', faqIntro: 'Kilka odpowiedzi, które pomogą lepiej poznać miód.',
     faq: [
       { q: 'Jaki miód wybrać na początek?', a: 'Jeśli lubisz łagodny smak, zacznij od miodu akacjowego lub rzepakowego. Wielokwiatowy pozwala odkrywać różne nuty kwiatowe. Lipowy i wrzosowy to propozycje dla osób szukających bardziej wyrazistego aromatu. Smak konkretnej partii może się różnić.' },
       { q: 'Czym różnią się odmiany miodu?', a: 'Odmiany różnią się przede wszystkim pochodzeniem nektaru. Wpływa ono na barwę, zapach, smak i tempo krystalizacji. Miód wielokwiatowy powstaje z nektaru różnych roślin, dlatego jego charakter może zmieniać się wraz z miejscem i okresem zbioru.' },
@@ -46,7 +46,7 @@ export const copy: Record<Locale, Copy> = {
       { q: 'Jak przechowywać miód?', a: 'Przechowuj miód w szczelnie zamkniętym słoiku, w suchym miejscu, z dala od bezpośredniego słońca i źródeł ciepła. Nabieraj go czystą, suchą łyżeczką. Uwzględnij również informacje umieszczone na etykiecie konkretnego produktu.' },
       { q: 'Jak zapytać o zakup i dostępność miodu REIL?', a: 'Przejdź do sekcji Kontakt, aby znaleźć dane pracowni. W zapytaniu podaj interesującą Cię odmianę i ilość. Aktualną dostępność, cenę oraz sposób przekazania zamówienia należy ustalić bezpośrednio z pracownią. Dane kontaktowe w tej wersji roboczej czekają na uzupełnienie.' },
     ],
-    contactLabel: '04 / Porozmawiajmy', contactTitle: 'Masz ochotę', contactItalic: 'na coś dobrego?',
+    contactLabel: '/ Porozmawiajmy', contactTitle: 'Masz ochotę', contactItalic: 'na coś dobrego?',
     contactIntro: 'Zapytaj o wybrany miód, aktualną ofertę lub po prostu poznaj nas bliżej.',
     phone: 'Zadzwoń', email: 'Napisz', address: 'Znajdź pracownię', pending: 'Dane do uzupełnienia',
     draft: 'Wersja robocza — dane pracowni zostaną uzupełnione przed publikacją.',
@@ -65,15 +65,15 @@ export const copy: Record<Locale, Copy> = {
     nav: ['Workshop', 'Honey', 'Questions', 'Contact'], skip: 'Skip to content',
     craft: 'Beekeeping workshop', heroTop: 'Little bees.', heroMain: 'Simple', heroItalic: 'pleasures.',
     intro: 'Take a moment. Discover a world of honey where every spoonful has a character of its own.',
-    discover: 'Discover our honey', scroll: 'Explore at your own pace', heroCaption: 'From bee to jar',
-    storyLabel: '01 / The workshop', storyTitle: 'Good things', storyItalic: 'start small.',
+    discover: 'Discover our honey', jarCaption: 'From bee to jar',
+    storyLabel: '/ The workshop', storyTitle: 'Good things', storyItalic: 'start small.',
     storyText: 'A flower. A bee. A little attention. At REIL, we invite you to discover honey through its flavour, scent and texture. Because between one jar and the next, there is a whole world of difference.',
     storyFoot: 'Five varieties. Five ways to savour a sweet moment.',
-    offerLabel: '02 / A collection of flavours', offerTitle: 'Find your favourite.',
+    offerLabel: '/ A collection of flavours', offerTitle: 'Find your favourite.',
     offerIntro: 'Gentle or bold? Floral or slightly bitter? Get to know the character of each of our honeys.',
     details: 'Explore this honey', ask: 'Ask about this honey', taste: 'Flavour & aroma', use: 'Try it with', crystallization: 'Crystallisation', close: 'Close details',
     draftProducts: 'Draft presentation. Seasons indicate typical fresh harvest periods, not current stock. Descriptions reflect typical varietal characteristics; the range and individual batches need confirmation from the workshop.',
-    faqLabel: '03 / Good to know', faqTitle: 'Naturally curious.', faqIntro: 'A few answers to help you get to know honey.',
+    faqLabel: '/ Good to know', faqTitle: 'Naturally curious.', faqIntro: 'A few answers to help you get to know honey.',
     faq: [
       { q: 'Which honey should I try first?', a: 'For a gentle flavour, start with acacia or rapeseed honey. Multifloral honey offers a range of floral notes. Linden and heather honey suit those looking for a bolder aroma. The flavour of individual batches can vary.' },
       { q: 'What makes honey varieties different?', a: 'The main difference is the source of nectar. It influences colour, aroma, flavour and the speed of crystallisation. Multifloral honey comes from various plants, so its character can change with the location and season of harvest.' },
@@ -81,7 +81,7 @@ export const copy: Record<Locale, Copy> = {
       { q: 'How should I store honey?', a: 'Keep honey in a tightly closed jar in a dry place, away from direct sunlight and heat. Use a clean, dry spoon. Also follow the information on the label of your particular product.' },
       { q: 'How can I ask about buying REIL honey?', a: 'Visit the Contact section for the workshop’s details. Include the variety and quantity you are interested in. Confirm current availability, prices and collection or delivery arrangements directly with the workshop. Contact details in this draft are awaiting completion.' },
     ],
-    contactLabel: '04 / Let’s talk', contactTitle: 'In the mood', contactItalic: 'for something good?',
+    contactLabel: '/ Let’s talk', contactTitle: 'In the mood', contactItalic: 'for something good?',
     contactIntro: 'Ask about a honey, explore the current range or simply get to know us a little better.',
     phone: 'Call us', email: 'Write to us', address: 'Find the workshop', pending: 'Details to be added',
     draft: 'Draft version — workshop details will be added before publication.',
