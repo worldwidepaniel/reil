@@ -1,10 +1,20 @@
-import faq from "../components/faq/faq.json";
+import faq from "../components/faq/faq.ts";
 
 // Polish copy is the source of truth for every translation.
 export const translations = {
   en: {
     card: {
       ask: "Ask about availability",
+      properties: "Characteristics",
+      uses: "Best enjoyed with",
+      details: "View honey details",
+      close: "Close",
+    },
+    honeys: {
+      sizesTitle: "Jar sizes",
+      sizes: "900 ml, 450 ml and 200 ml, plus 30 ml gift jars.",
+      sizesNote:
+        "Ask about the available varieties and sizes from the latest harvest.",
     },
     meta: {
       title: "REIL Beekeeping Studio | Authentic Raw Honey from Stary Żagań",
@@ -164,6 +174,15 @@ export const translations = {
     },
     card: {
       ask: "Zapytaj o dostępność",
+      properties: "Właściwości",
+      uses: "Do czego pasuje",
+      details: "Poznaj ten miód",
+      close: "Zamknij",
+    },
+    honeys: {
+      sizesTitle: "Pojemności słoików",
+      sizes: "900 ml, 450 ml i 200 ml oraz słoiczki prezentowe 30 ml.",
+      sizesNote: "Zapytaj o dostępne odmiany i pojemności z ostatnich zbiorów.",
     },
     header: {
       main: "Pracownia Pszczelarska",

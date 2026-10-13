@@ -6,6 +6,7 @@ import Faq from "../components/faq/faq.astro";
 
 import { useTranslations } from "../i18n/layout.ts";
 const locale = Astro.currentLocale;
+const i18n = useTranslations(locale);
 ---
 
 <Layout>
@@ -142,11 +143,21 @@ const locale = Astro.currentLocale;
             name={honey[locale].name}
             season={honey[locale].season}
             description={honey[locale].description}
+            uses={honey[locale].uses}
             alt={honey[locale].alt}
             src={honey.src}
           />
         ))
       }
+    </div>
+    <div
+      class="flex w-full flex-col gap-2 rounded-md bg-(--color-surface-raised) p-6 text-center"
+    >
+      <h2 class="type-headline-sm">{i18n.honeys.sizesTitle}</h2>
+      <p class="type-body-md">{i18n.honeys.sizes}</p>
+      <a href="#contact" class="type-body-sm underline"
+        >{i18n.honeys.sizesNote}</a
+      >
     </div>
   </section>
   <Faq />

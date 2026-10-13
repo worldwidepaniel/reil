@@ -1,25 +1,95 @@
 ---
-const { src, alt, name, description, season } = Astro.props;
+const { src, alt, name, description, uses, season } = Astro.props;
 
 import { useTranslations } from "../../i18n/layout.ts";
 const locale = Astro.currentLocale;
 const i18n = useTranslations(locale);
+const dialogId = `honey-${src.split("/").pop().split(".")[0]}`;
 ---
 
 <div class="group relative overflow-hidden rounded-md bg-white">
-  <div class="overflow-hidden">
-    <img
-      src={src}
-      alt={alt}
-      class="transition-transform duration-700 group-hover:scale-110"
-    />
-  </div>
-  <div class="flex flex-col gap-2 px-6 py-6">
-    <h3>{name}</h3>
-    <p class="type-body-md">{description}</p>
-    <a href="#contact" class="type-label-sm">{i18n.card.ask}</a>
-  </div>
-  <div class="absolute top-3 left-3 rounded-lg bg-white px-4 py-1">
-    {season}
-  </div>
+  <button
+    type="button"
+    class="block w-full cursor-pointer text-left focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-(--color-secondary)"
+    data-honey-dialog={dialogId}
+    aria-haspopup="dialog"
+    aria-controls={dialogId}
+    aria-labelledby={`${dialogId}-card-title`}
+  >
+    <span class="block overflow-hidden">
+      <img
+        src={src}
+        alt={alt}
+        class="transition-transform duration-700 group-hover:scale-110 motion-reduce:transition-none"
+      />
+    </span>
+    <span class="flex flex-col gap-4 px-6 pt-6 pb-4">
+      <span id={`${dialogId}-card-title`} class="type-headline-sm">{name}</span>
+      <span class="type-label-sm underline">{i18n.card.details}</span>
+    </span>
+    <span class="absolute top-3 left-3 rounded-lg bg-white px-4 py-1">
+      {season}
+    </span>
+  </button>
+  <a href="#contact" class="type-label-sm mx-6 mb-6 inline-block"
+    >{i18n.card.ask}</a
+  >
 </div>
+
+<dialog
+  id={dialogId}
+  aria-labelledby={`${dialogId}-title`}
+  class="fixed inset-0 m-auto max-h-none w-[calc(100vw-2rem)] max-w-[40rem] overflow-visible rounded-md bg-(--color-surface) p-6 text-(--color-secondary) shadow-lg backdrop:bg-(--color-scrim)"
+>
+  <form method="dialog" class="mb-4 flex justify-end">
+    <button
+      type="submit"
+      autofocus
+      class="type-label-md min-h-touch-target cursor-pointer rounded-sm px-4 underline focus-visible:outline-2"
+    >
+      {i18n.card.close}
+    </button>
+  </form>
+  <div class="flex flex-col gap-4">
+    <h2 id={`${dialogId}-title`} class="type-headline-sm">{name}</h2>
+    <p class="type-body-sm">{season}</p>
+    <dl class="flex flex-col gap-4">
+      <div>
+        <dt class="type-label-md mb-1">{i18n.card.properties}</dt>
+        <dd class="type-body-md">{description}</dd>
+      </div>
+      <div>
+        <dt class="type-label-md mb-1">{i18n.card.uses}</dt>
+        <dd class="type-body-md">{uses}</dd>
+      </div>
+    </dl>
+    <a href="#contact" class="type-label-sm underline" data-honey-contact
+      >{i18n.card.ask}</a
+    >
+  </div>
+</dialog>
+
+<script>
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-honey-dialog]")
+    .forEach((button) => {
+      const dialog = document.getElementById(
+        button.dataset.honeyDialog!,
+      ) as HTMLDialogElement;
+      button.addEventListener("click", () => dialog.showModal());
+      dialog.addEventListener("click", (event) => {
+        if (event.target !== dialog) return;
+        const { left, right, top, bottom } = dialog.getBoundingClientRect();
+        if (
+          event.clientX < left ||
+          event.clientX > right ||
+          event.clientY < top ||
+          event.clientY > bottom
+        )
+          dialog.close();
+      });
+      dialog
+        .querySelector("[data-honey-contact]")!
+        .addEventListener("click", () => dialog.close());
+    });
+</script>

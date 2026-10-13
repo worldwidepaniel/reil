@@ -3,75 +3,85 @@
     "src": "/assets/images/rzepak.webp",
     "pl": {
       "name": "Miód Rzepakowy",
-      "description": "Jasny, kremowy i wyjątkowo łagodny. Ceniony za subtelny smak i aksamitną konsystencję.",
+      "description": "Jasny, kremowy i wyjątkowo łagodny. Szybko krystalizuje, zyskując aksamitną konsystencję.",
       "season": "Wiosna",
-      "alt": "Szklany słoik surowego, kremowego miodu rzepakowego zebranego wiosną przez Pracownia Pszczelarska REIL w Starym Żaganiu."
+      "alt": "Szklany słoik surowego, kremowego miodu rzepakowego zebranego wiosną przez Pracownia Pszczelarska REIL w Starym Żaganiu.",
+      "uses": "Do pieczywa, owsianki i twarogu. Łagodny smak dobrze pasuje do codziennych śniadań."
     },
     "en": {
       "name": "Rapeseed Honey",
-      "description": "Pale, creamy, and exceptionally mild. Appreciated for its subtle flavor and velvety texture.",
+      "description": "Pale, creamy, and exceptionally mild. It crystallizes quickly, developing a velvety texture.",
       "season": "Spring",
-      "alt": "A glass jar of raw, creamy rapeseed honey harvested in spring by REIL Beekeeping Studio in Stary Żagań."
+      "alt": "A glass jar of raw, creamy rapeseed honey harvested in spring by REIL Beekeeping Studio in Stary Żagań.",
+      "uses": "Bread, porridge, and cottage cheese. Its mild flavour pairs well with everyday breakfasts."
     }
   },
   {
     "src": "/assets/images/akacja.webp",
     "pl": {
       "name": "Miód Akacjowy",
-      "description": "Lekki, wiosenny, o delikatnym kwiatowym aromacie. Idealny na początek dnia.",
+      "description": "Lekki, wiosenny, o delikatnym kwiatowym aromacie. Krystalizuje powoli i długo pozostaje płynny.",
       "season": "Wiosna",
-      "alt": "Szklany słoik surowego, nierozgrzewanego miodu akacjowego zebranego wiosną przez Pracownia Pszczelarska REIL w Starym Żaganiu."
+      "alt": "Szklany słoik surowego, nierozgrzewanego miodu akacjowego zebranego wiosną przez Pracownia Pszczelarska REIL w Starym Żaganiu.",
+      "uses": "Do jogurtu, owoców i napojów. Delikatna słodycz nie dominuje nad pozostałymi smakami."
     },
     "en": {
       "name": "Acacia Honey",
-      "description": "Light and spring-fresh, with a delicate floral aroma. Perfect for starting the day.",
+      "description": "Light and spring-fresh, with a delicate floral aroma. It crystallizes slowly and stays liquid for a long time.",
       "season": "Spring",
-      "alt": "A glass jar of raw, unheated acacia honey harvested in spring by REIL Beekeeping Studio in Stary Żagań."
+      "alt": "A glass jar of raw, unheated acacia honey harvested in spring by REIL Beekeeping Studio in Stary Żagań.",
+      "uses": "Yogurt, fruit, and drinks. Its delicate sweetness lets the other flavours shine."
     }
   },
   {
     "src": "/assets/images/wielokwiat.webp",
     "pl": {
       "name": "Miód Wielokwiatowy",
-      "description": "Bogaty i różnorodny, pełen aromatów wielu kwiatów. Naturalna słodycz zamknięta w słoiku.",
+      "description": "Bogaty i różnorodny, pełen aromatów wielu kwiatów. Barwa i smak zależą od roślin kwitnących w danym sezonie.",
       "season": "Wiosna-Lato",
-      "alt": "Szklany słoik surowego, niefiltrowanego mechanicznie miodu wielokwiatowego z pasieki Pracownia Pszczelarska REIL w Starym Żaganiu."
+      "alt": "Szklany słoik surowego, niefiltrowanego mechanicznie miodu wielokwiatowego z pasieki Pracownia Pszczelarska REIL w Starym Żaganiu.",
+      "uses": "Do naleśników, domowych wypieków i sosów sałatkowych. Uniwersalny wybór do kuchni."
     },
     "en": {
       "name": "Wildflower Honey",
-      "description": "Rich and diverse, filled with the aromas of many blossoms. Natural sweetness captured in a jar.",
+      "description": "Rich and varied, with aromas of many blossoms. Its colour and flavour depend on the plants flowering that season.",
       "season": "Spring–Summer",
-      "alt": "A glass jar of raw, mechanically unfiltered wildflower honey from the apiary of REIL Beekeeping Studio in Stary Żagań."
+      "alt": "A glass jar of raw, mechanically unfiltered wildflower honey from the apiary of REIL Beekeeping Studio in Stary Żagań.",
+      "uses": "Pancakes, homemade baking, and salad dressings. A versatile choice for the kitchen."
     }
   },
   {
     "src": "/assets/images/lipa.webp",
     "pl": {
       "name": "Miód Lipowy",
-      "description": "Aromatyczny i wyrazisty, z nutą kwiatów lipy. Prawdziwy smak letnich zbiorów.",
+      "description": "Aromatyczny i wyrazisty, z nutą kwiatów lipy i lekko piekącym posmakiem. Prawdziwy smak letnich zbiorów.",
       "season": "Lato",
-      "alt": "Szklany słoik prawdziwego, nierozgrzewanego miodu lipowego zebranego latem przez Pracownia Pszczelarska REIL w Starym Żaganiu."
+      "alt": "Szklany słoik prawdziwego, nierozgrzewanego miodu lipowego zebranego latem przez Pracownia Pszczelarska REIL w Starym Żaganiu.",
+      "uses": "Do herbaty, domowej lemoniady i deserów. Nadaje im wyrazisty, kwiatowy aromat."
     },
     "en": {
       "name": "Linden Honey",
-      "description": "Fragrant and distinctive, with notes of linden blossoms. The true taste of summer harvests.",
+      "description": "Fragrant and distinctive, with notes of linden blossoms and a lightly sharp finish. The true taste of summer harvests.",
       "season": "Summer",
-      "alt": "A glass jar of authentic, unheated linden honey harvested in summer by REIL Beekeeping Studio in Stary Żagań."
+      "alt": "A glass jar of authentic, unheated linden honey harvested in summer by REIL Beekeeping Studio in Stary Żagań.",
+      "uses": "Tea, homemade lemonade, and desserts. It adds a distinctive floral aroma."
     }
   },
   {
     "src": "/assets/images/wrzos.webp",
     "pl": {
       "name": "Miód Wrzosowy",
-      "description": "Głęboki w smaku, z charakterystyczną, lekko pikantną nutą. Klasyk późnego lata.",
+      "description": "Głęboki w smaku, z charakterystyczną, lekko pikantną nutą i gęstą, galaretowatą konsystencją. Klasyk późnego lata.",
       "season": "Późne Lato–Jesień",
-      "alt": "Szklany słoik surowego, nierozgrzewanego miodu wrzosowego zebranego późnym latem przez Pracownia Pszczelarska REIL w Starym Żaganiu."
+      "alt": "Szklany słoik surowego, nierozgrzewanego miodu wrzosowego zebranego późnym latem przez Pracownia Pszczelarska REIL w Starym Żaganiu.",
+      "uses": "Do serów, pieczywa i marynat. Wyrazisty smak pasuje do słodkich i wytrawnych dodatków."
     },
     "en": {
       "name": "Heather Honey",
-      "description": "Deep in flavor, with a characteristic lightly spicy note. A classic of late summer.",
+      "description": "Deep in flavour, with a characteristic lightly spicy note and a thick, jelly-like texture. A classic of late summer.",
       "season": "Late Summer–Autumn",
-      "alt": "A glass jar of raw, unheated heather honey harvested in late summer by REIL Beekeeping Studio in Stary Żagań."
+      "alt": "A glass jar of raw, unheated heather honey harvested in late summer by REIL Beekeeping Studio in Stary Żagań.",
+      "uses": "Cheese, bread, and marinades. Its bold flavour pairs well with sweet and savoury accompaniments."
     }
   }
 ]

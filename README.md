@@ -7,9 +7,18 @@ then translate it faithfully into English (`en`, `/en`) without adding claims.
 Page copy lives in `src/pages/`, shared labels and metadata in `src/i18n/layout.ts`,
 and product and FAQ copy in `src/data/honeys.json` and `src/components/faq/faq.json`.
 FAQ structured data reuses the displayed FAQ translations.
+Honey FAQ entries are generated in `src/components/faq/faq.ts` from the same
+product descriptions and pairings used by the honey modals.
 
 After updating translations, run `npm run build` followed by
-`node --test tests/translations.test.mjs` to check both generated language pages.
+`node --test tests/honeys.test.mjs` to check product copy and jar sizes on both
+generated language pages.
+
+Honey characteristics follow the Polish food-quality inspectorate's descriptions
+of [honey analysis](https://www.gov.pl/web/ijhars/metody-analityczne-stosowane-w-badaniach-jakosci-handlowej-miodow)
+and the Ministry of Agriculture's [varietal descriptions](https://www.gov.pl/web/rolnictwo/miody-rudnickie).
+Culinary pairings are serving suggestions, informed by
+[University of Missouri Extension's honey guide](https://extension.missouri.edu/publications/gh1120).
 
 ```sh
 npm create astro@latest -- --template minimal
