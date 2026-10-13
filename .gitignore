@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# browser checks and performance reports
+test-results/
+playwright-report/
+.lighthouse/
