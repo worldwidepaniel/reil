@@ -1,5 +1,16 @@
 # Astro Starter Kit: Minimal
 
+## Content translations
+
+Polish (`pl`, `/`) is the source of truth. Write or update Polish content first,
+then translate it faithfully into English (`en`, `/en`) without adding claims.
+Page copy lives in `src/pages/`, shared labels and metadata in `src/i18n/layout.ts`,
+and product and FAQ copy in `src/data/honeys.json` and `src/components/faq/faq.json`.
+FAQ structured data reuses the displayed FAQ translations.
+
+After updating translations, run `npm run build` followed by
+`node --test tests/translations.test.mjs` to check both generated language pages.
+
 ```sh
 npm create astro@latest -- --template minimal
 ```
