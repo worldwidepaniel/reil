@@ -1,8 +1,8 @@
 export type Locale = 'pl' | 'en';
 
 export const contact: { phone: string | null; email: string | null; address: string | null } = {
-  phone: '+48 123 456 789',
-  email: 'pracownia-pszczelarska@reil.pl',
+  phone: '+48 601 461 907',
+  email: 'pasiekareil@gmail.com',
   address: 'Stary Żagań, Polska',
 };
 
