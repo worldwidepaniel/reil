@@ -1,6 +1,56 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
+test('jar turns on one axis, resumes after dragging and stops with motion disabled', async ({ page, isMobile }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  const control = page.locator('.jar-control');
+  await expect(control).toBeVisible({ timeout: 30000 });
+  await control.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(1700);
+  await page.addStyleTag({ content: '.jar-control:focus-visible { outline: none; }' });
+  const initial = await control.screenshot();
+  await page.waitForTimeout(500);
+  expect((await control.screenshot()).equals(initial)).toBe(false);
+
+  await control.focus();
+  await page.keyboard.press('Home');
+  const reset = await control.screenshot();
+  await page.keyboard.press('ArrowRight');
+  expect((await control.screenshot()).equals(reset)).toBe(false);
+  await page.keyboard.press('Home');
+  const beforeDrag = await control.screenshot();
+  if (!isMobile) {
+    const box = (await control.boundingBox())!;
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.mouse.down();
+    await expect(control).toHaveAttribute('data-dragging', '');
+    const held = await control.screenshot();
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2 + 20, { steps: 5 });
+    await page.waitForTimeout(200);
+    expect((await control.screenshot()).equals(held)).toBe(true);
+    await page.mouse.move(box.x + box.width / 2 + 75, box.y + box.height / 2 + 20, { steps: 10 });
+    const dragged = await control.screenshot();
+    expect(dragged.equals(held)).toBe(false);
+    await page.waitForTimeout(200);
+    expect((await control.screenshot()).equals(dragged)).toBe(true);
+    await page.mouse.up();
+    await expect(control).not.toHaveAttribute('data-dragging');
+    expect((await control.screenshot()).equals(beforeDrag)).toBe(false);
+  }
+  const resting = await control.screenshot();
+  await page.waitForTimeout(500);
+  expect((await control.screenshot()).equals(resting)).toBe(false);
+  await page.locator('.motion-button').click();
+  await expect(control).toBeHidden();
+  await expect(page.locator('#scene canvas')).toHaveCount(0);
+  await page.locator('.motion-button').click();
+  await expect(control).toBeVisible({ timeout: 30000 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(control).toBeHidden();
+  await expect(page.locator('#scene canvas')).toHaveCount(0);
+});
+
 test('hover returns smoothly, keyboard focus responds and motion preferences win', async ({ page, isMobile }) => {
   test.skip(isMobile, 'Touch devices intentionally do not receive hover motion.');
   await page.emulateMedia({ reducedMotion: 'no-preference' });
@@ -36,6 +86,9 @@ test('PL/EN, modal focus and contact navigation', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'pl');
   await expect(page.locator('h1')).toHaveCount(1);
+  await expect(page.locator('.brand')).toHaveText('REIL.');
+  await expect(page.locator('.footer-wordmark')).toHaveText('REIL.');
+  await expect(page.locator('.jar-label b')).toHaveText('REIL.');
   const link = page.locator('.product-heading a').first();
   await link.click();
   const dialog = page.getByRole('dialog');
@@ -77,6 +130,7 @@ test('reduced motion never fetches the models and respects changes', async ({ pa
   await expect(page.locator('.motion-button')).toBeDisabled();
   await expect(page.locator('.static-jar')).toHaveCSS('opacity', '1');
   await page.waitForTimeout(700);
+  await expect(page.locator('.jar-control')).toBeHidden();
   expect(models).toEqual([]);
 });
 

@@ -1,8 +1,9 @@
 export type Locale = 'pl' | 'en';
 
-// Confirm these details before publication; null values never become contact links.
 export const contact: { phone: string | null; email: string | null; address: string | null } = {
-  phone: null, email: null, address: null,
+  phone: '+48 123 456 789',
+  email: 'pracownia-pszczelarska@reil.pl',
+  address: 'Stary Żagań, Polska',
 };
 
 interface Product {
@@ -12,7 +13,7 @@ interface Product {
 interface Copy {
   title: string; description: string; nav: string[]; skip: string;
   craft: string; heroTop: string; heroMain: string; heroItalic: string;
-  intro: string; discover: string; jarCaption: string;
+  intro: string; discover: string; jarCaption: string; jarControl: string;
   storyLabel: string; storyTitle: string; storyItalic: string; storyText: string; storyFoot: string;
   offerLabel: string; offerTitle: string; offerIntro: string; details: string; ask: string;
   taste: string; use: string; crystallization: string; close: string; draftProducts: string;
@@ -30,7 +31,7 @@ export const copy: Record<Locale, Copy> = {
     nav: ['Pracownia', 'Miody', 'Pytania', 'Kontakt'], skip: 'Przejdź do treści',
     craft: 'Pracownia pszczelarska', heroTop: 'Małe pszczoły.', heroMain: 'Wielka', heroItalic: 'przyjemność.',
     intro: 'Zatrzymaj się na chwilę. Odkryj świat miodu, w którym każda łyżeczka ma swój charakter.',
-    discover: 'Poznaj nasze miody', jarCaption: 'Od pszczoły do słoika',
+    discover: 'Poznaj nasze miody', jarCaption: 'Od pszczoły do słoika', jarControl: 'Obróć słoik REIL. Przeciągnij w poziomie lub użyj strzałek w lewo i w prawo. Home przywraca początkowy widok.',
     storyLabel: '/ Pracownia', storyTitle: 'Dobre rzeczy', storyItalic: 'zaczynają się od małych.',
     storyText: 'Od kwiatu. Od pszczoły. Od uważności. W REIL zapraszamy do poznawania miodu przez jego smak, zapach i konsystencję. Bo między jednym a drugim słoikiem kryje się cały świat różnic.',
     storyFoot: 'Pięć odmian. Pięć sposobów na słodką chwilę.',
@@ -44,7 +45,7 @@ export const copy: Record<Locale, Copy> = {
       { q: 'Czym różnią się odmiany miodu?', a: 'Odmiany różnią się przede wszystkim pochodzeniem nektaru. Wpływa ono na barwę, zapach, smak i tempo krystalizacji. Miód wielokwiatowy powstaje z nektaru różnych roślin, dlatego jego charakter może zmieniać się wraz z miejscem i okresem zbioru.' },
       { q: 'Czy krystalizacja miodu jest naturalna?', a: 'Tak. Krystalizacja to naturalne przechodzenie miodu z postaci płynnej w bardziej stałą. Sama w sobie nie oznacza zepsucia. Jej tempo zależy między innymi od odmiany i temperatury przechowywania: miód rzepakowy zwykle krystalizuje szybciej niż akacjowy.' },
       { q: 'Jak przechowywać miód?', a: 'Przechowuj miód w szczelnie zamkniętym słoiku, w suchym miejscu, z dala od bezpośredniego słońca i źródeł ciepła. Nabieraj go czystą, suchą łyżeczką. Uwzględnij również informacje umieszczone na etykiecie konkretnego produktu.' },
-      { q: 'Jak zapytać o zakup i dostępność miodu REIL?', a: 'Przejdź do sekcji Kontakt, aby znaleźć dane pracowni. W zapytaniu podaj interesującą Cię odmianę i ilość. Aktualną dostępność, cenę oraz sposób przekazania zamówienia należy ustalić bezpośrednio z pracownią. Dane kontaktowe w tej wersji roboczej czekają na uzupełnienie.' },
+      { q: 'Jak zapytać o zakup i dostępność miodu REIL?', a: 'Przejdź do sekcji Kontakt, aby znaleźć dane pracowni. W zapytaniu podaj interesującą Cię odmianę i ilość. Aktualną dostępność, cenę oraz sposób przekazania zamówienia należy ustalić bezpośrednio z pracownią.' },
     ],
     contactLabel: '/ Porozmawiajmy', contactTitle: 'Masz ochotę', contactItalic: 'na coś dobrego?',
     contactIntro: 'Zapytaj o wybrany miód, aktualną ofertę lub po prostu poznaj nas bliżej.',
@@ -65,7 +66,7 @@ export const copy: Record<Locale, Copy> = {
     nav: ['Workshop', 'Honey', 'Questions', 'Contact'], skip: 'Skip to content',
     craft: 'Beekeeping workshop', heroTop: 'Little bees.', heroMain: 'Simple', heroItalic: 'pleasures.',
     intro: 'Take a moment. Discover a world of honey where every spoonful has a character of its own.',
-    discover: 'Discover our honey', jarCaption: 'From bee to jar',
+    discover: 'Discover our honey', jarCaption: 'From bee to jar', jarControl: 'Rotate the REIL jar. Drag horizontally or use the left and right arrow keys. Home resets the view.',
     storyLabel: '/ The workshop', storyTitle: 'Good things', storyItalic: 'start small.',
     storyText: 'A flower. A bee. A little attention. At REIL, we invite you to discover honey through its flavour, scent and texture. Because between one jar and the next, there is a whole world of difference.',
     storyFoot: 'Five varieties. Five ways to savour a sweet moment.',
@@ -79,7 +80,7 @@ export const copy: Record<Locale, Copy> = {
       { q: 'What makes honey varieties different?', a: 'The main difference is the source of nectar. It influences colour, aroma, flavour and the speed of crystallisation. Multifloral honey comes from various plants, so its character can change with the location and season of harvest.' },
       { q: 'Is honey crystallisation natural?', a: 'Yes. Crystallisation is the natural process of honey changing from liquid to a more solid form. On its own, it does not mean the honey has spoiled. The speed depends on factors including variety and storage temperature: rapeseed honey usually crystallises faster than acacia honey.' },
       { q: 'How should I store honey?', a: 'Keep honey in a tightly closed jar in a dry place, away from direct sunlight and heat. Use a clean, dry spoon. Also follow the information on the label of your particular product.' },
-      { q: 'How can I ask about buying REIL honey?', a: 'Visit the Contact section for the workshop’s details. Include the variety and quantity you are interested in. Confirm current availability, prices and collection or delivery arrangements directly with the workshop. Contact details in this draft are awaiting completion.' },
+      { q: 'How can I ask about buying REIL honey?', a: 'Visit the Contact section for the workshop’s details. Include the variety and quantity you are interested in. Confirm current availability, prices and collection or delivery arrangements directly with the workshop.' },
     ],
     contactLabel: '/ Let’s talk', contactTitle: 'In the mood', contactItalic: 'for something good?',
     contactIntro: 'Ask about a honey, explore the current range or simply get to know us a little better.',

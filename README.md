@@ -38,7 +38,7 @@ Ustaw `SITE_URL` w środowisku budowania na prawdziwy adres HTTPS strony. Astro 
 
 Oryginalne GLB i TTF pozostają nienaruszone. `pasieka-web.glb` jest pochodną `pasieka.glb`: geometria i animacja są zachowane, trzy tekstury zmniejszone do 512 px i JPEG quality 85. Fonty WOFF2 skonwertowano z dostarczonych TTF narzędziem wawoff2 2.0.1; licencja jest w `public/OFL.txt`.
 
-Scena ładuje się osobno po pierwszym renderze treści. Na telefonach używa prostych materiałów Lambert i niższej rozdzielczości. Na większych ekranach używa środowiska oświetleniowego i materiałów fizycznych. Ruch jest krótki, bez zapętlonego lotu. Renderowanie zatrzymuje się poza sceną i w nieaktywnej karcie.
+Scena ładuje się osobno po pierwszym renderze treści. Na telefonach używa prostych materiałów Lambert i niższej rozdzielczości. Na większych ekranach używa środowiska oświetleniowego i materiałów fizycznych. Pszczoła wykonuje krótki przelot, a słoik obraca się powoli, dopóki pozostaje widoczny. Słoik obraca się tylko wokół osi Y. Przeciągnięcie w poziomie zmienia kąt i wstrzymuje automatyczny obrót do puszczenia — wtedy obrót trwa dalej od pozostawionej pozycji. Strzałki w lewo i w prawo zmieniają kąt; Home resetuje widok. Renderowanie zatrzymuje się poza sceną i w nieaktywnej karcie.
 
 Ustawienie systemowe `prefers-reduced-motion` ma pierwszeństwo; ręczne wyłączenie jest zapamiętywane. W tym trybie modele nie są pobierane. Bez WebGL lub przy błędzie modelu pozostaje statyczna kompozycja CSS. Bez JS działają nawigacja, języki, opisy i FAQ.
 

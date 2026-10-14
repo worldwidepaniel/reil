@@ -46,7 +46,7 @@ const meta = site ? { '@context': 'https://schema.org', '@type': 'Organization',
   <body>
     <a class="skip-link" href="#main">{t.skip}</a>
     <header class="site-header wrap">
-      <a href={locale === 'pl' ? '/' : '/en/'} class="brand" aria-label={`REIL — ${t.craft}`}>reil<span class="brand-dot">.</span></a>
+      <a href={locale === 'pl' ? '/' : '/en/'} class="brand" aria-label={`REIL — ${t.craft}`}>REIL<span class="brand-dot">.</span></a>
       <nav aria-label={locale === 'pl' ? 'Nawigacja główna' : 'Main navigation'}>
         {sections.map((id, i) => <a href={`#${id}`}>{t.nav[i]}</a>)}
       </nav>
@@ -74,10 +74,11 @@ const meta = site ? { '@context': 'https://schema.org', '@type': 'Organization',
             <p class="hero-intro">{t.intro}</p>
             <a class="button-primary" href="#miody">{t.discover}<span aria-hidden="true">↗</span></a>
           </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="hero-disc"></div>
-            <div class="static-jar"><div class="jar-lid"></div><div class="jar-glass"><div class="jar-label"><span>{t.craft}</span><b>reil.</b><span>{t.jarCaption}</span></div></div></div>
-            <div class="hero-orbit"><span>✳</span></div>
+          <div class="hero-art">
+            <div class="hero-disc" aria-hidden="true"></div>
+            <div class="static-jar" aria-hidden="true"><div class="jar-lid"></div><div class="jar-glass"><div class="jar-label"><span>{t.craft}</span><b>REIL.</b><span>{t.jarCaption}</span></div></div></div>
+            <div class="hero-orbit" aria-hidden="true"><span>✳</span></div>
+            <button class="jar-control" type="button" aria-label={t.jarControl} aria-keyshortcuts="ArrowLeft ArrowRight Home" hidden></button>
           </div>
         </section>
 
@@ -130,7 +131,7 @@ const meta = site ? { '@context': 'https://schema.org', '@type': 'Organization',
         {Object.values(contact).some(value => !value) && <p class="contact-draft">{t.draft}</p>}
       </div></section>
     </main>
-    <footer class="site-footer wrap"><div class="footer-top"><span>{t.craft}</span><span>{t.footer}</span><a href="#main">{t.back} ↑</a></div><div class="footer-wordmark" aria-hidden="true">reil<span>.</span></div><div class="footer-bottom"><span>© {new Date().getFullYear()} REIL</span><span>{locale === 'pl' ? 'Z uważnością dla małych rzeczy.' : 'With care for the little things.'}</span></div></footer>
+    <footer class="site-footer wrap"><div class="footer-top"><span>{t.craft}</span><span>{t.footer}</span><a href="#main">{t.back} ↑</a></div><div class="footer-wordmark" aria-hidden="true">REIL<span>.</span></div><div class="footer-bottom"><span>© {new Date().getFullYear()} REIL</span><span>{locale === 'pl' ? 'Z uważnością dla małych rzeczy.' : 'With care for the little things.'}</span></div></footer>
 
     <dialog id="product-dialog" aria-labelledby="dialog-title">
       <button class="dialog-close icon-button" aria-label={t.close}>×</button>

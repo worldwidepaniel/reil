@@ -96,7 +96,7 @@ export async function createScene(host: HTMLElement, signal: AbortSignal) {
   ctx.fillStyle = '#3b3021'; ctx.textAlign = 'center';
   const english = document.documentElement.lang === 'en';
   ctx.font = '20px Arial'; ctx.fillText(english ? 'B E E K E E P I N G   W O R K S H O P' : 'P R A C O W N I A   P S Z C Z E L A R S K A', 384, 70);
-  ctx.font = '178px "PT Serif", Georgia'; ctx.fillText('reil.', 380, 248);
+  ctx.font = '148px "PT Serif", Georgia'; ctx.fillText('REIL.', 384, 244);
   ctx.font = '20px Arial'; ctx.fillText(english ? 'F R O M   B E E   T O   J A R' : 'O D   P S Z C Z O Ł Y   D O   S Ł O I K A', 384, 322);
   const labelTexture = new THREE.CanvasTexture(labelCanvas);
   labelTexture.colorSpace = THREE.SRGBColorSpace;
@@ -131,9 +131,14 @@ export async function createScene(host: HTMLElement, signal: AbortSignal) {
   }
 
   const heroArt = document.querySelector<HTMLElement>('.hero-art')!;
+  const jarControl = document.querySelector<HTMLButtonElement>('.jar-control')!;
   const marker = document.querySelector<HTMLElement>('.flower-mark')!;
   const opening = document.querySelector<HTMLElement>('.opening')!;
   const flight = { progress: 0, entrance: 0, clip: .85 };
+  const rotation = { auto: 0, offset: 0 };
+  let heroVisible = true;
+  let pointer: { id: number; x: number; moved: boolean } | undefined;
+  let suppressClick = false;
   let dirty = true;
   let visible = true;
   let disposed = false;
@@ -153,6 +158,7 @@ export async function createScene(host: HTMLElement, signal: AbortSignal) {
   const markDirty = () => { dirty = true; };
   const entrance = gsap.to(flight, { entrance: 1, duration: 1.35, paused: true, ease: 'power2.out', onUpdate: markDirty });
   const dipper = gsap.fromTo(flight, { clip: .4 }, { clip: .85, duration: 1.4, paused: true, ease: 'power2.out', onUpdate: markDirty });
+  const turn = gsap.to(rotation, { auto: Math.PI * 2, duration: 32, repeat: -1, paused: true, ease: 'none', onUpdate: markDirty });
   const scroll = gsap.to(flight, {
     progress: 1, ease: 'none', onUpdate: markDirty,
     scrollTrigger: { trigger: opening, start: 'top top', end: 'bottom bottom', scrub: mobile ? .3 : .65, invalidateOnRefresh: true },
@@ -168,8 +174,7 @@ export async function createScene(host: HTMLElement, signal: AbortSignal) {
     const jarScale = art.height * (width <= 760 ? .53 : .57);
     jar.scale.setScalar(jarScale * (.9 + .1 * flight.entrance));
     jar.position.set(art.left + art.width * .52 - width / 2, height / 2 - (art.top + art.height * .54 - canvasTop) - (1 - flight.entrance) * 60, 0);
-    jar.rotation.z = -.16 + progress * .14;
-    jar.rotation.y = -.3 + progress * .5 + (1 - flight.entrance) * -.3;
+    jar.rotation.set(.06, -.3 + rotation.auto + rotation.offset, -.16);
     mixer.setTime((jarGLTF.animations[0]?.duration || 0) * flight.clip);
     const startX = art.left + art.width * .14;
     const startY = art.top + art.height * .32;
@@ -185,9 +190,63 @@ export async function createScene(host: HTMLElement, signal: AbortSignal) {
     const running = compiled && visible && !document.hidden;
     if (running) { dirty = true; gsap.ticker.add(render); entrance.resume(); dipper.resume(); }
     else { gsap.ticker.remove(render); entrance.pause(); dipper.pause(); }
+    if (running && heroVisible && !pointer) turn.resume();
+    else turn.pause();
   };
-  const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; setRunning(); });
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.target === opening) visible = entry.isIntersecting;
+      if (entry.target === heroArt) heroVisible = entry.isIntersecting;
+    }
+    setRunning();
+  });
   observer.observe(opening);
+  observer.observe(heroArt);
+
+  const pointerDown = (event: PointerEvent) => {
+    if (!event.isPrimary || event.button !== 0 || pointer) return;
+    turn.pause();
+    suppressClick = false;
+    pointer = { id: event.pointerId, x: event.clientX, moved: false };
+    jarControl.setPointerCapture(event.pointerId);
+    jarControl.dataset.dragging = '';
+  };
+  const pointerMove = (event: PointerEvent) => {
+    if (!pointer || pointer.id !== event.pointerId) return;
+    const dx = event.clientX - pointer.x;
+    if (!pointer.moved && Math.abs(dx) < 3) return;
+    pointer.moved = true;
+    rotation.offset += dx * .012;
+    pointer.x = event.clientX;
+    dirty = true;
+  };
+  const pointerEnd = (event: PointerEvent) => {
+    if (!pointer || pointer.id !== event.pointerId) return;
+    suppressClick = pointer.moved;
+    pointer = undefined;
+    delete jarControl.dataset.dragging;
+    if (jarControl.hasPointerCapture(event.pointerId)) jarControl.releasePointerCapture(event.pointerId);
+    setRunning();
+  };
+  const click = (event: MouseEvent) => {
+    if (suppressClick && event.detail !== 0) return;
+    rotation.offset += Math.PI / 6; dirty = true;
+  };
+  const keyDown = (event: KeyboardEvent) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home'].includes(event.key)) return;
+    event.preventDefault();
+    if (event.key === 'ArrowLeft') rotation.offset -= Math.PI / 9;
+    if (event.key === 'ArrowRight') rotation.offset += Math.PI / 9;
+    if (event.key === 'Home') rotation.offset = -rotation.auto;
+    dirty = true;
+  };
+  jarControl.addEventListener('pointerdown', pointerDown);
+  jarControl.addEventListener('pointermove', pointerMove);
+  jarControl.addEventListener('pointerup', pointerEnd);
+  jarControl.addEventListener('pointercancel', pointerEnd);
+  jarControl.addEventListener('lostpointercapture', pointerEnd);
+  jarControl.addEventListener('click', click);
+  jarControl.addEventListener('keydown', keyDown);
   window.addEventListener('scroll', markDirty, { passive: true });
   window.addEventListener('resize', updateLayout);
   document.addEventListener('visibilitychange', setRunning);
@@ -201,7 +260,17 @@ export async function createScene(host: HTMLElement, signal: AbortSignal) {
   function cleanup() {
     if (disposed) return;
     disposed = true;
-    entrance.kill(); dipper.kill(); scroll.scrollTrigger?.kill(); scroll.kill();
+    entrance.kill(); dipper.kill(); turn.kill(); scroll.scrollTrigger?.kill(); scroll.kill();
+    jarControl.hidden = true;
+    if (pointer && jarControl.hasPointerCapture(pointer.id)) jarControl.releasePointerCapture(pointer.id);
+    delete jarControl.dataset.dragging;
+    jarControl.removeEventListener('pointerdown', pointerDown);
+    jarControl.removeEventListener('pointermove', pointerMove);
+    jarControl.removeEventListener('pointerup', pointerEnd);
+    jarControl.removeEventListener('pointercancel', pointerEnd);
+    jarControl.removeEventListener('lostpointercapture', pointerEnd);
+    jarControl.removeEventListener('click', click);
+    jarControl.removeEventListener('keydown', keyDown);
     gsap.ticker.remove(render);
     observer.disconnect(); themeObserver.disconnect();
     window.removeEventListener('scroll', markDirty);
@@ -223,6 +292,7 @@ export async function createScene(host: HTMLElement, signal: AbortSignal) {
   render();
   document.documentElement.classList.add('scene-ready');
   host.dataset.state = 'ready';
+  jarControl.hidden = false;
   setRunning();
   return cleanup;
 }

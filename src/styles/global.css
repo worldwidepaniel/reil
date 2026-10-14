@@ -52,6 +52,8 @@ img { display: block; width: 100%; height: auto; }
 .button-primary { display: inline-flex; align-items: center; gap: 38px; background: var(--ink); color: var(--paper); padding: 16px 23px; margin-top: 30px; border-radius: 2px; font-size: 13px; }
 .button-primary span { font-size: 21px; line-height: 1; }
 .hero-art { position: relative; min-width: 0; height: 560px; }
+.jar-control { position: absolute; z-index: 4; left: 25%; top: 14%; width: 54%; height: 68%; border: 0; border-radius: 30%; background: transparent; cursor: grab; touch-action: pan-y; user-select: none; }
+.jar-control[data-dragging] { cursor: grabbing; }
 .hero-disc { position: absolute; width: 90%; aspect-ratio: 1; top: 8%; left: 5%; border-radius: 50%; background: radial-gradient(ellipse at 35% 30%, #f8df98, #eabe62 68%, #d6a349); }
 [data-theme='dark'] .hero-disc { background: radial-gradient(ellipse at 35% 30%, #ad823a, #805b29 65%, #5d472a); }
 
@@ -128,7 +130,7 @@ img { display: block; width: 100%; height: auto; }
 .site-footer { padding-block: 38px 25px; }
 .footer-top, .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 11px; }
 .footer-top a { padding-block: 12px; min-height: 44px; }
-.footer-wordmark { font-family: var(--font-display); letter-spacing: -.085em; font-size: clamp(140px, 34vw, 480px); line-height: 1.1; text-align: center; padding-bottom: 30px; }
+.footer-wordmark { font-family: var(--font-display); letter-spacing: -.055em; font-size: clamp(100px, 29vw, 400px); line-height: 1.1; text-align: center; padding-bottom: 30px; }
 .footer-wordmark span { color: var(--accent); }
 .footer-bottom { border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); }
 dialog { max-width: min(940px, calc(100vw - 36px)); max-height: calc(100dvh - 48px); border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 0; margin: auto; }
