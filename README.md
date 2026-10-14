@@ -36,7 +36,7 @@ Ustaw `SITE_URL` w środowisku budowania na prawdziwy adres HTTPS strony. Astro 
 
 ## Grafika i ruch
 
-Oryginalne GLB i TTF pozostają nienaruszone. `pasieka-web.glb` jest pochodną `pasieka.glb`: geometria i animacja są zachowane, trzy tekstury zmniejszone do 512 px i JPEG quality 85. Fonty WOFF2 skonwertowano z dostarczonych TTF narzędziem wawoff2 2.0.1; licencja jest w `public/OFL.txt`.
+`pasieka-web.glb` jest pochodną `pasieka.glb`: animacja jest zachowana, trzy tekstury zmniejszone do 512 px i JPEG quality 85. W obu modelach słoika naprawiono sześć odwróconych ścian bocznych oraz ich położenie i normalne, aby usunąć widoczny pionowy szew. Pozostałe GLB i źródłowe TTF pozostają nienaruszone. Fonty WOFF2 skonwertowano z dostarczonych TTF narzędziem wawoff2 2.0.1; licencja jest w `public/OFL.txt`.
 
 Scena ładuje się osobno po pierwszym renderze treści. Na telefonach używa prostych materiałów Lambert i niższej rozdzielczości. Na większych ekranach używa środowiska oświetleniowego i materiałów fizycznych. Pszczoła wykonuje krótki przelot, a słoik obraca się powoli, dopóki pozostaje widoczny. Słoik obraca się tylko wokół osi Y. Przeciągnięcie w poziomie zmienia kąt i wstrzymuje automatyczny obrót do puszczenia — wtedy obrót trwa dalej od pozostawionej pozycji. Strzałki w lewo i w prawo zmieniają kąt; Home resetuje widok. Renderowanie zatrzymuje się poza sceną i w nieaktywnej karcie.
 

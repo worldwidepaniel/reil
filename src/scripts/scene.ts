@@ -71,7 +71,8 @@ export async function createScene(host: HTMLElement, signal: AbortSignal) {
   const jarMesh = jarModel.getObjectByName('MasonJar') as THREE.Mesh;
   if (jarMesh) {
     const previous = jarMesh.material;
-    jarMesh.material = new THREE.MeshPhysicalMaterial({ color: 0xc58723, metalness: .18, roughness: .25, clearcoat: 1, clearcoatRoughness: .1 });
+    // Keep the source model’s double-sided glass surfaces.
+    jarMesh.material = new THREE.MeshPhysicalMaterial({ side: THREE.DoubleSide, color: 0xc58723, metalness: .18, roughness: .25, clearcoat: 1, clearcoatRoughness: .1 });
     for (const material of Array.isArray(previous) ? previous : [previous]) material.dispose();
   }
   jarModel.updateMatrixWorld(true);

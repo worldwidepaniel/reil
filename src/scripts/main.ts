@@ -37,9 +37,12 @@ if (typeof dialog.showModal === 'function') {
       target.src = photo.src;
       target.alt = photo.alt;
       document.querySelector('#dialog-title')!.textContent = card.querySelector('h3')!.textContent;
+      document.querySelector('#dialog-season')!.textContent = card.querySelector('.harvest-season')!.textContent;
+      document.querySelector('#dialog-note')!.textContent = card.querySelector('.product-note')!.textContent;
       document.querySelector('#dialog-content')!.replaceChildren(source.cloneNode(true));
       dialogOpener = link;
       dialog.showModal();
+      dialog.scrollTop = 0;
       dialog.querySelector<HTMLButtonElement>('.dialog-close')!.focus();
     });
   });

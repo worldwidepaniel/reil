@@ -107,6 +107,31 @@ test('PL/EN, modal focus and contact navigation', async ({ page }) => {
   await expect(page.locator('.product-card')).toHaveCount(5);
 });
 
+test('redesigned modal updates each honey and keeps close reachable after scrolling', async ({ page }, testInfo) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference', colorScheme: 'light' });
+  await page.route('**/*.glb', route => route.abort());
+  for (const path of ['/', '/en/']) {
+    await page.goto(path);
+    const cards = page.locator('.product-card');
+    const dialog = page.getByRole('dialog');
+    for (let i = 0; i < await cards.count(); i++) {
+      const card = cards.nth(i);
+      await card.locator('.product-heading a').click();
+      await expect(dialog).toBeVisible();
+      await expect(dialog.locator('#dialog-title')).toHaveText(await card.locator('h3').innerText());
+      await expect(dialog.locator('#dialog-season')).toHaveText(await card.locator('.harvest-season').innerText());
+      await expect(dialog.locator('#dialog-note')).toHaveText(await card.locator('.product-note').innerText());
+      expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+      if (path === '/' && i === 1) await page.screenshot({ path: testInfo.outputPath('modal.png'), animations: 'disabled', scale: 'css' });
+      await dialog.evaluate(el => { el.scrollTop = el.scrollHeight; });
+      await expect(dialog.locator('.dialog-close')).toBeInViewport();
+      await dialog.locator('.dialog-close').click();
+      await expect(dialog).toBeHidden();
+      await expect(card.locator('.product-heading a')).toBeFocused();
+    }
+  }
+});
+
 test('FAQ and remembered theme, no horizontal overflow', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' });
   await page.goto('/');
@@ -208,7 +233,21 @@ test('SEO metadata and content are present in the initial HTML', async ({ reques
 test('content, product details and FAQ work without JavaScript', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
   const page = await context.newPage();
-  await page.goto('/en/');
+  for (const path of ['/', '/en/']) {
+    await page.goto(path);
+    const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
+    const faq = schemas.map(text => JSON.parse(text)).find(data => data['@type'] === 'FAQPage');
+    const questions = await page.locator('.faq-list h3').allTextContents();
+    const answers = await page.locator('.faq-list details > p').allTextContents();
+    expect(questions).toHaveLength(11);
+    expect(faq.inLanguage).toBe(path === '/' ? 'pl' : 'en');
+    expect(faq.mainEntity).toEqual(questions.map((name, i) => ({
+      '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text: answers[i] },
+    })));
+    await expect(page.locator('.faq-number').nth(9)).toHaveText('10');
+    await page.locator('.faq-list summary').nth(2).click();
+    await expect(page.locator('.faq-list details').nth(2).locator('p')).toBeVisible();
+  }
   await expect(page.locator('.product-card')).toHaveCount(5);
   const details = page.locator('.product-fallback').first();
   await details.locator('summary').click();

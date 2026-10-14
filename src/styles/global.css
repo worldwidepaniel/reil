@@ -133,18 +133,30 @@ img { display: block; width: 100%; height: auto; }
 .footer-wordmark { font-family: var(--font-display); letter-spacing: -.055em; font-size: clamp(100px, 29vw, 400px); line-height: 1.1; text-align: center; padding-bottom: 30px; }
 .footer-wordmark span { color: var(--accent); }
 .footer-bottom { border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); }
-dialog { max-width: min(940px, calc(100vw - 36px)); max-height: calc(100dvh - 48px); border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 0; margin: auto; }
-dialog::backdrop { background: #16130ebd; backdrop-filter: blur(5px); }
-.dialog-close { position: absolute; right: 14px; top: 14px; background: var(--paper); font-size: 28px; z-index: 2; }
-.dialog-layout { display: grid; grid-template-columns: 1fr 1.15fr; }
-.dialog-layout > img { height: 100%; object-fit: cover; }
-.dialog-copy { padding: 62px 38px 36px; }
-.dialog-copy h2 { font-size: 40px; margin-top: 12px; overflow-wrap: anywhere; }
+dialog { width: min(1040px, calc(100vw - 48px)); max-width: none; max-height: calc(100dvh - 48px); border: 1px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--ink); padding: 0; margin: auto; overscroll-behavior: contain; box-shadow: 0 28px 100px #16130e33; opacity: 0; transform: translateY(18px); transition: opacity 220ms var(--ease-leave), transform 220ms var(--ease-leave), display 220ms allow-discrete, overlay 220ms allow-discrete; }
+dialog[open] { opacity: 1; transform: translateY(0); transition-duration: 400ms; transition-timing-function: var(--ease-enter); }
+dialog::backdrop { background: #16130e99; backdrop-filter: blur(8px); opacity: 0; transition: opacity 220ms var(--ease-leave), display 220ms allow-discrete, overlay 220ms allow-discrete; }
+dialog[open]::backdrop { opacity: 1; transition-duration: 400ms; transition-timing-function: var(--ease-enter); }
+@starting-style { dialog[open] { opacity: 0; transform: translateY(18px); } dialog[open]::backdrop { opacity: 0; } }
+.dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 28px 16px 32px; position: sticky; top: 0; z-index: 2; background: var(--paper); border-bottom: 1px solid var(--line); }
+.dialog-close { flex-shrink: 0; }
+.dialog-layout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr); align-items: start; gap: 40px; padding: 32px; }
+.dialog-photo { margin: 0; background: var(--surface); }
+.dialog-photo img { aspect-ratio: 1; object-fit: cover; }
+.dialog-photo figcaption { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 20px; font-size: 12px; }
+.dialog-photo figcaption > span:last-child { color: var(--accent); font-size: 26px; line-height: 1; }
+.dialog-copy { padding: 8px 0 12px; min-width: 0; }
+.dialog-copy h2 { font-size: clamp(36px, 4.5vw, 58px); font-style: italic; overflow-wrap: anywhere; }
+#dialog-note { margin-top: 14px; font-size: 12px; color: var(--muted); }
 .detail-intro { margin-top: 24px; font-size: 15px; }
 .product-detail-content dl { margin: 24px 0 0; }
 .product-detail-content dl > div { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 16px; }
 .product-detail-content dt { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
 .product-detail-content dd { font-size: 14px; line-height: 1.7; margin: 0; color: var(--muted); }
+.dialog-copy .detail-intro { margin-top: 28px; font-size: 15px; line-height: 1.8; }
+.dialog-copy dl { margin-top: 28px; }
+.dialog-copy dl > div { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 16px; padding-top: 18px; margin-top: 18px; }
+.dialog-copy dt { font-size: 10px; padding-top: 3px; }
 body:has(dialog[open]) { overflow: hidden; }
 
 /* Base curves also control the return when hover or keyboard focus leaves. */
@@ -221,9 +233,9 @@ body:has(dialog[open]) { overflow: hidden; }
   .section-heading { display: block; margin-bottom: 32px; }
   .section-heading h2 { font-size: 2.65rem; }
   .section-heading > p { max-width: 340px; margin-top: 20px; }
-  .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 35px 18px; }
-  .product-image { aspect-ratio: .9; }
-  .product-heading h3 { font-size: clamp(1.1rem, 4.2vw, 1.7rem); }
+  .products-grid { grid-template-columns: minmax(0, 1fr); gap: 35px; }
+  .product-image { aspect-ratio: 1.2; }
+  .product-heading h3 { font-size: 1.8rem; }
   .product-heading > span { display: none; }
   .product-note { font-size: 11px; }
   .ask-link { font-size: 11px; gap: 8px; margin-top: 5px; }
@@ -251,12 +263,16 @@ body:has(dialog[open]) { overflow: hidden; }
   .footer-top > span:nth-child(2) { display: none; }
   .footer-bottom { align-items: start; font-size: 10px; }
   .footer-bottom > span:last-child { text-align: right; max-width: 150px; }
-  .dialog-layout { display: block; }
-  .dialog-layout > img { max-height: 210px; object-fit: cover; }
-  .dialog-copy { padding: 26px; }
-  .dialog-copy h2 { font-size: 34px; }
+  dialog { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); }
+  .dialog-header { padding: 10px 16px 10px 20px; }
+  .dialog-layout { display: block; padding: 20px; }
+  .dialog-photo img { aspect-ratio: 1.5; }
+  .dialog-photo figcaption { padding: 12px 16px; }
+  .dialog-copy { padding: 28px 0 8px; }
+  .dialog-copy h2 { font-size: clamp(32px, 8.5vw, 48px); }
+  .dialog-copy dl > div { grid-template-columns: 85px minmax(0, 1fr); gap: 12px; }
 }
-@media (max-width: 360px) { .products-grid { grid-template-columns: 1fr; } .product-image { aspect-ratio: 1.2; } .product-heading h3 { font-size: 1.8rem; } .languages { margin-right: 0; } .header-tools { gap: 4px; } }
+@media (max-width: 360px) { .languages { margin-right: 0; } .header-tools { gap: 4px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
 :root[data-motion='off'] *, :root[data-motion='off'] *::before, :root[data-motion='off'] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 @media print { .scene, .header-tools, .hero-art, dialog { display: none; } .wrap { width: 100%; } .hero { min-height: 0; display: block; } .product-fallback { display: block !important; } }
